@@ -1,0 +1,5 @@
+DAF,XF106,2018,700,Tractor-Trailer,T1001
+MAN,TGX,2018,800,Tractor-Trailer,T1002
+Mercedes-Benz,Sprinter316,2015,400,Tow,T1003
+Volkswagen,Crafter,2014,200,Tow,T1004
+Renault,Master,2017,250,Catering,T1005
