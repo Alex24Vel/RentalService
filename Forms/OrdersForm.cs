@@ -19,12 +19,17 @@ namespace Forms
         {
             InitializeComponent();
         }
+
         private void OrdersForm_Load(object sender, EventArgs e)
         {
             VehicleNumbers numbers = new VehicleNumbers();
             List<VehicleNumbers> list = new List<VehicleNumbers>();
             numbers.ReadNumbers(list);
             vehicleNumbers_comboBox.DataSource = list;
+
+            // loads data for showBy_comboBox_SelectedIndexChanged() so you don't have to click Load data beforehand
+            Orders tmp = new Orders();
+            tmp.getData(ordersList);
         }
 
         internal List<Orders> ordersList = new List<Orders>();
@@ -42,10 +47,9 @@ namespace Forms
 
             string fileStr = $"{order.Renter},{order.Vehicle},{order.VehicleNumber}," +
                 $"{order.RentDate},{order.DueDate}";
-            using(StreamWriter writer = new StreamWriter(ordersPath, true)) 
-               writer.WriteLine(fileStr);
+            using (StreamWriter writer = new StreamWriter(ordersPath, true))
+                writer.WriteLine(fileStr);
         }
-
         private void clear_button_Click(object sender, EventArgs e)
         {
             renter_textBox.Clear();
@@ -54,7 +58,6 @@ namespace Forms
             rentDate_textBox.Clear();
             dueDate_textBox.Clear();
         }
-
         private void cancel_button_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -62,30 +65,37 @@ namespace Forms
             mainForm.Show();
         }
 
+
         private void load_button_Click(object sender, EventArgs e)
         {
             Orders orders = new Orders();
             orders.getData(ordersList);
             orders_dataGridView.DataSource = ordersList;
         }
-
         private void clearDataBase_button_Click(object sender, EventArgs e)
         {
             orders_dataGridView.DataSource = ordersList.Distinct();
             ordersList.Clear();
+            showBy_comboBox.ResetText();
             ordersBindingSource.DataSource = ordersList;
         }
-
         private void update_button_Click(object sender, EventArgs e)
         {
             clearDataBase_button_Click(sender, e);
             orders_dataGridView.Update();
             load_button_Click(sender, e);
         }
-
         private void ordersExplorer_button_Click(object sender, EventArgs e)
         {
             Process.Start(new ProcessStartInfo { FileName = "explorer", Arguments = $"/n,/select,{ordersPath}" });
+        }
+
+
+        private void showBy_comboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            List<Orders> tmpSource = new List<Orders>(ordersList);
+            tmpSource = tmpSource.Where(x => x.Vehicle == showBy_comboBox.Text).ToList();
+            orders_dataGridView.DataSource = tmpSource;
         }
 
     }

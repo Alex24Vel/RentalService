@@ -79,14 +79,15 @@
             this.password_textBox.Location = new System.Drawing.Point(140, 78);
             this.password_textBox.Name = "password_textBox";
             this.password_textBox.PasswordChar = '*';
-            this.password_textBox.Size = new System.Drawing.Size(187, 40);
+            this.password_textBox.Size = new System.Drawing.Size(187, 33);
             this.password_textBox.TabIndex = 3;
+            this.password_textBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.password_textBox_KeyDown);
             // 
             // username_textBox
             // 
             this.username_textBox.Location = new System.Drawing.Point(140, 29);
             this.username_textBox.Name = "username_textBox";
-            this.username_textBox.Size = new System.Drawing.Size(187, 40);
+            this.username_textBox.Size = new System.Drawing.Size(187, 33);
             this.username_textBox.TabIndex = 2;
             // 
             // password_label
@@ -94,7 +95,7 @@
             this.password_label.AutoSize = true;
             this.password_label.Location = new System.Drawing.Point(7, 73);
             this.password_label.Name = "password_label";
-            this.password_label.Size = new System.Drawing.Size(119, 33);
+            this.password_label.Size = new System.Drawing.Size(93, 26);
             this.password_label.TabIndex = 1;
             this.password_label.Text = "Password";
             // 
@@ -103,7 +104,7 @@
             this.username_label.AutoSize = true;
             this.username_label.Location = new System.Drawing.Point(7, 32);
             this.username_label.Name = "username_label";
-            this.username_label.Size = new System.Drawing.Size(127, 33);
+            this.username_label.Size = new System.Drawing.Size(98, 26);
             this.username_label.TabIndex = 0;
             this.username_label.Text = "Username";
             // 
@@ -120,16 +121,16 @@
             // message_textBox
             // 
             this.message_textBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.message_textBox.Location = new System.Drawing.Point(68, 31);
+            this.message_textBox.Location = new System.Drawing.Point(54, 38);
             this.message_textBox.Name = "message_textBox";
-            this.message_textBox.Size = new System.Drawing.Size(257, 33);
+            this.message_textBox.Size = new System.Drawing.Size(257, 26);
             this.message_textBox.TabIndex = 6;
             this.message_textBox.TabStop = false;
             this.message_textBox.Text = "Authorize to access data";
             // 
             // LoginForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 26F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(437, 366);

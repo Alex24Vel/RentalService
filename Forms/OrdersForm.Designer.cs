@@ -56,6 +56,8 @@
             this.vehicleNumbers_comboBox = new System.Windows.Forms.ComboBox();
             this.vehicleNumbersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ordersExplorer_button = new System.Windows.Forms.Button();
+            this.showOnly_label = new System.Windows.Forms.Label();
+            this.showBy_comboBox = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.ordersBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.orders_dataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vehicleNumbersBindingSource)).BeginInit();
@@ -128,9 +130,9 @@
             // 
             // cancel_button
             // 
-            this.cancel_button.Location = new System.Drawing.Point(912, 506);
+            this.cancel_button.Location = new System.Drawing.Point(928, 564);
             this.cancel_button.Name = "cancel_button";
-            this.cancel_button.Size = new System.Drawing.Size(100, 60);
+            this.cancel_button.Size = new System.Drawing.Size(82, 57);
             this.cancel_button.TabIndex = 9;
             this.cancel_button.Text = "Cancel";
             this.cancel_button.UseVisualStyleBackColor = true;
@@ -157,7 +159,7 @@
             // 
             // load_button
             // 
-            this.load_button.Location = new System.Drawing.Point(271, 495);
+            this.load_button.Location = new System.Drawing.Point(271, 518);
             this.load_button.Name = "load_button";
             this.load_button.Size = new System.Drawing.Size(110, 60);
             this.load_button.TabIndex = 12;
@@ -208,7 +210,7 @@
             this.orders_dataGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.orders_dataGridView.GridColor = System.Drawing.Color.DimGray;
             this.orders_dataGridView.ImeMode = System.Windows.Forms.ImeMode.On;
-            this.orders_dataGridView.Location = new System.Drawing.Point(271, 65);
+            this.orders_dataGridView.Location = new System.Drawing.Point(271, 86);
             this.orders_dataGridView.MinimumSize = new System.Drawing.Size(0, 45);
             this.orders_dataGridView.Name = "orders_dataGridView";
             this.orders_dataGridView.ReadOnly = true;
@@ -278,7 +280,7 @@
             // 
             // clearDataBase_button
             // 
-            this.clearDataBase_button.Location = new System.Drawing.Point(503, 497);
+            this.clearDataBase_button.Location = new System.Drawing.Point(503, 520);
             this.clearDataBase_button.Name = "clearDataBase_button";
             this.clearDataBase_button.Size = new System.Drawing.Size(110, 60);
             this.clearDataBase_button.TabIndex = 22;
@@ -288,7 +290,7 @@
             // 
             // update_button
             // 
-            this.update_button.Location = new System.Drawing.Point(387, 497);
+            this.update_button.Location = new System.Drawing.Point(387, 520);
             this.update_button.Name = "update_button";
             this.update_button.Size = new System.Drawing.Size(110, 60);
             this.update_button.TabIndex = 23;
@@ -313,7 +315,7 @@
             // 
             // ordersExplorer_button
             // 
-            this.ordersExplorer_button.Location = new System.Drawing.Point(619, 497);
+            this.ordersExplorer_button.Location = new System.Drawing.Point(619, 520);
             this.ordersExplorer_button.Name = "ordersExplorer_button";
             this.ordersExplorer_button.Size = new System.Drawing.Size(154, 69);
             this.ordersExplorer_button.TabIndex = 25;
@@ -321,12 +323,37 @@
             this.ordersExplorer_button.UseVisualStyleBackColor = true;
             this.ordersExplorer_button.Click += new System.EventHandler(this.ordersExplorer_button_Click);
             // 
+            // showOnly_label
+            // 
+            this.showOnly_label.AutoSize = true;
+            this.showOnly_label.Location = new System.Drawing.Point(701, 21);
+            this.showOnly_label.Name = "showOnly_label";
+            this.showOnly_label.Size = new System.Drawing.Size(157, 27);
+            this.showOnly_label.TabIndex = 26;
+            this.showOnly_label.Text = "Orders only for:";
+            // 
+            // showBy_comboBox
+            // 
+            this.showBy_comboBox.FormattingEnabled = true;
+            this.showBy_comboBox.Items.AddRange(new object[] {
+            "Car",
+            "Truck",
+            "Motocycle",
+            "Bicycle"});
+            this.showBy_comboBox.Location = new System.Drawing.Point(864, 18);
+            this.showBy_comboBox.Name = "showBy_comboBox";
+            this.showBy_comboBox.Size = new System.Drawing.Size(121, 35);
+            this.showBy_comboBox.TabIndex = 27;
+            this.showBy_comboBox.SelectedIndexChanged += new System.EventHandler(this.showBy_comboBox_SelectedIndexChanged);
+            // 
             // OrdersForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 27F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1025, 578);
+            this.ClientSize = new System.Drawing.Size(1022, 633);
+            this.Controls.Add(this.showBy_comboBox);
+            this.Controls.Add(this.showOnly_label);
             this.Controls.Add(this.ordersExplorer_button);
             this.Controls.Add(this.vehicleNumbers_comboBox);
             this.Controls.Add(this.update_button);
@@ -389,5 +416,7 @@
         internal System.Windows.Forms.ComboBox vehicleNumbers_comboBox;
         private System.Windows.Forms.BindingSource vehicleNumbersBindingSource;
         private System.Windows.Forms.Button ordersExplorer_button;
+        private System.Windows.Forms.Label showOnly_label;
+        private System.Windows.Forms.ComboBox showBy_comboBox;
     }
 }

@@ -45,5 +45,10 @@ namespace Forms
             password_textBox.Clear();
         }
 
+        private void password_textBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                login_button_Click(sender, e);
+        }
     }
 }
