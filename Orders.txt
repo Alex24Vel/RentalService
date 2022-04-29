@@ -1,0 +1,6 @@
+Federico Werner,Car,C1002,24/04/2022,30/04/2022
+Kris Medina,Car,C1004,24/04/2022,28/04/2022
+Colm May,Bicycle,B1002,15/05/2022,28/07/2022
+Killian Yang,Truck,T1003,08/03/2022,18/05/2022
+Harris Talley,Motocycle,M1001,25/07/2022,21/09/2022
+Test,Motocycle,M1007,26/04/2022,28/04/2022

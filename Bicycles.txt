@@ -1,0 +1,6 @@
+Ardis,Maxus,2021,40,B1001
+Crossride,Skyline,2020,20,B1002
+Champion,Spark,2021,20,B1003
+Ardis,Santana,2020,15,B1004
+Ardis,Shultz,2021,20,B1005
+GT,Racer,2021,10,B1006

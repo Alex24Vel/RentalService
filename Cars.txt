@@ -1,0 +1,8 @@
+BMW,X4,2018,500,SUV,C1001
+Mercedes-Benz,E220,2019,500,Sedan,C1002
+Volkswagen,Touareg,2018,400,SUV,C1003
+Audi,A6,2017,350,Sedan,C1004
+Volkswagen,Jetta,2015,100,Sedan,C1005
+Ford,Fusion,2018,150,Sedan,C1006
+Toyota,Camry,2019,200,Sedan,C1007
+Test,Test,2022,0,Test,C0000
