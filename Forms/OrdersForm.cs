@@ -26,10 +26,6 @@ namespace Forms
             List<VehicleNumbers> list = new List<VehicleNumbers>();
             numbers.ReadNumbers(list);
             vehicleNumbers_comboBox.DataSource = list;
-
-            // loads data for showBy_comboBox_SelectedIndexChanged() so you don't have to click Load data beforehand
-            Orders tmp = new Orders();
-            tmp.getData(ordersList);
         }
 
         internal List<Orders> ordersList = new List<Orders>();
@@ -93,7 +89,9 @@ namespace Forms
 
         private void showBy_comboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            List<Orders> tmpSource = new List<Orders>(ordersList);
+            List<Orders> tmpSource = new List<Orders>();
+            Orders tmp = new Orders();
+            tmp.getData(tmpSource);
             tmpSource = tmpSource.Where(x => x.Vehicle == showBy_comboBox.Text).ToList();
             orders_dataGridView.DataSource = tmpSource;
         }
