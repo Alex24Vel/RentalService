@@ -11,7 +11,9 @@ using System.Windows.Forms;
 using RentalServiceLib;
 using System.Diagnostics;
 
-// todo 1) Fix bug with vehicles_comboBox_SelectedIndexChanged (shows used numbers after a while (not critical, hard to notice)
+/* 
+ * todo Bug_1:  [vehicles_comboBox_SelectedIndexChanged] shows used numbers after all free were also used *hard to fix*
+*/
 
 namespace Forms
 {
@@ -23,10 +25,10 @@ namespace Forms
         }
 
         internal List<Orders> ordersList = new List<Orders>();
-        internal List<VehicleNumbers> numsList = new List<VehicleNumbers>(); 
+        internal List<VehicleNumbers> numsList = new List<VehicleNumbers>();
         readonly string ordersPath = @"T:\Microsoft Visual Studio\Projects\Orders.txt";
 
-        
+
         private void add_button_Click(object sender, EventArgs e)
         {
             if (renter_textBox.TextLength <= 1 || rentDate_textBox.TextLength <= 1 || dueDate_textBox.TextLength <= 1)
@@ -51,11 +53,11 @@ namespace Forms
         {
             renter_textBox.Clear();
             vehicles_comboBox.ResetText();
-            
+
             vehicleNumbers_comboBox.ResetText();
             numsList.Clear();
             vehicleNumbers_comboBox.DataSource = numsList.Distinct().ToList();
-            
+
             rentDate_textBox.Clear();
             dueDate_textBox.Clear();
         }
@@ -103,18 +105,20 @@ namespace Forms
         {
             VehicleNumbers numbers = new VehicleNumbers();
             numbers.ReadNumbers(numsList);
-            
-            List<Orders> tmp = new List<Orders>(); 
-            Orders orders = new Orders();          
-            orders.getData(tmp);
-            
-            for(int i = 0; i < numsList.Count; i++)
-                for(int j = 0; j < tmp.Count; j++)
-                    if (numsList[i].Number.Equals(tmp[j].VehicleNumber))
-                        numsList.Remove(numsList[i]);
-
             numsList = numsList.Where(x => x.Number.Contains(vehicles_comboBox.Text.Substring(0, 1))).ToList();
-            vehicleNumbers_comboBox.DataSource = numsList;
+
+            List<Orders> tmp = new List<Orders>();
+            Orders orders = new Orders();
+            orders.getData(tmp);
+            try
+            {
+                for (int i = 0; i < numsList.Count; i++)
+                    for (int j = 0; j < tmp.Count; j++)
+                        if (numsList[i].Number.Equals(tmp[j].VehicleNumber))
+                            numsList.Remove(numsList[i]);
+            }
+            catch (ArgumentOutOfRangeException) { vehicleNumbers_comboBox.Text = $"No {vehicles_comboBox.Text}s available"; }
+            finally { vehicleNumbers_comboBox.DataSource = numsList; }
         }
     }
 }
