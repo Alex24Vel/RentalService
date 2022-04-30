@@ -1,5 +1,8 @@
 # RentalService
 OOP project
-Master branch (28/04/2022) - basic version of a project
+Master branch - works properly
 
-**COMMENT FILE PATHS (and add your own) in FORMS & Class Library files**
+**For a project to function well, you have to do this first:**
+- COMMENT FILE PATHS (and add your own) in FORMS & Class Library files
+- Create your own branch (Name it however you want) based on master branch, so you don't break the already functioning code
+- Feel free to use tester project (Console app, allows you to test new code more easily if needed)
