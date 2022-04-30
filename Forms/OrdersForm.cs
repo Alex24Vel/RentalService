@@ -33,18 +33,23 @@ namespace Forms
 
         private void add_button_Click(object sender, EventArgs e)
         {
-            Orders order = new Orders();
-            order.Renter = renter_textBox.Text;
-            order.Vehicle = vehicles_comboBox.Text;
-            order.VehicleNumber = vehicleNumbers_comboBox.Text;
-            order.RentDate = rentDate_textBox.Text.ToString();
-            order.DueDate = dueDate_textBox.Text.ToString();
-            ordersList.Add(order);
+            if (renter_textBox.TextLength <= 1 || rentDate_textBox.TextLength <= 1 || dueDate_textBox.TextLength <= 1)
+                MessageBox.Show("Fill in all fields!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            else
+            {
+                Orders order = new Orders();
+                order.Renter = renter_textBox.Text;
+                order.Vehicle = vehicles_comboBox.Text;
+                order.VehicleNumber = vehicleNumbers_comboBox.Text;
+                order.RentDate = rentDate_textBox.Text.ToString();
+                order.DueDate = dueDate_textBox.Text.ToString();
+                ordersList.Add(order);
 
-            string fileStr = $"{order.Renter},{order.Vehicle},{order.VehicleNumber}," +
-                $"{order.RentDate},{order.DueDate}";
-            using (StreamWriter writer = new StreamWriter(ordersPath, true))
-                writer.WriteLine(fileStr);
+                string fileStr = $"{order.Renter},{order.Vehicle},{order.VehicleNumber}," +
+                    $"{order.RentDate},{order.DueDate}";
+                using (StreamWriter writer = new StreamWriter(ordersPath, true))
+                    writer.WriteLine(fileStr);
+            }
         }
         private void clear_button_Click(object sender, EventArgs e)
         {
@@ -95,7 +100,6 @@ namespace Forms
             tmpSource = tmpSource.Where(x => x.Vehicle == showBy_comboBox.Text).ToList();
             orders_dataGridView.DataSource = tmpSource;
         }
-
         private void vehicles_comboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             VehicleNumbers numbers = new VehicleNumbers();
