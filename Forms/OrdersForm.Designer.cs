@@ -409,7 +409,6 @@
             this.Name = "OrdersForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Orders ";
-            this.Load += new System.EventHandler(this.OrdersForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ordersBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.orders_dataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vehicleNumbersBindingSource)).EndInit();

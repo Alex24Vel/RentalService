@@ -11,6 +11,8 @@ using System.Windows.Forms;
 using RentalServiceLib;
 using System.Diagnostics;
 
+// todo 1) Fix bug with vehicles_comboBox_SelectedIndexChanged (shows used numbers after a while (not critical, hard to notice)
+
 namespace Forms
 {
     public partial class OrdersForm : Form
@@ -20,17 +22,11 @@ namespace Forms
             InitializeComponent();
         }
 
-        private void OrdersForm_Load(object sender, EventArgs e)
-        {
-            VehicleNumbers numbers = new VehicleNumbers();
-            numbers.ReadNumbers(list);
-            vehicleNumbers_comboBox.DataSource = list;
-        }
-
-        internal List<Orders> ordersList = new List<Orders>();           
-        internal List<VehicleNumbers> list = new List<VehicleNumbers>(); // using to show numbers without hardcoding them
+        internal List<Orders> ordersList = new List<Orders>();
+        internal List<VehicleNumbers> numsList = new List<VehicleNumbers>(); 
         readonly string ordersPath = @"T:\Microsoft Visual Studio\Projects\Orders.txt";
 
+        
         private void add_button_Click(object sender, EventArgs e)
         {
             if (renter_textBox.TextLength <= 1 || rentDate_textBox.TextLength <= 1 || dueDate_textBox.TextLength <= 1)
@@ -55,7 +51,11 @@ namespace Forms
         {
             renter_textBox.Clear();
             vehicles_comboBox.ResetText();
+            
             vehicleNumbers_comboBox.ResetText();
+            numsList.Clear();
+            vehicleNumbers_comboBox.DataSource = numsList.Distinct().ToList();
+            
             rentDate_textBox.Clear();
             dueDate_textBox.Clear();
         }
@@ -75,10 +75,9 @@ namespace Forms
         }
         private void clearDataBase_button_Click(object sender, EventArgs e)
         {
-            orders_dataGridView.DataSource = ordersList.Distinct();
             ordersList.Clear();
             showBy_comboBox.ResetText();
-            ordersBindingSource.DataSource = ordersList;
+            orders_dataGridView.DataSource = ordersList.Distinct();
         }
         private void update_button_Click(object sender, EventArgs e)
         {
@@ -103,9 +102,19 @@ namespace Forms
         private void vehicles_comboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             VehicleNumbers numbers = new VehicleNumbers();
-            numbers.ReadNumbers(list);
-            list = list.Where(x => x.Number.Contains(vehicles_comboBox.Text.Substring(0,1))).ToList();
-            vehicleNumbers_comboBox.DataSource = list;
+            numbers.ReadNumbers(numsList);
+            
+            List<Orders> tmp = new List<Orders>(); 
+            Orders orders = new Orders();          
+            orders.getData(tmp);
+            
+            for(int i = 0; i < numsList.Count; i++)
+                for(int j = 0; j < tmp.Count; j++)
+                    if (numsList[i].Number.Equals(tmp[j].VehicleNumber))
+                        numsList.Remove(numsList[i]);
+
+            numsList = numsList.Where(x => x.Number.Contains(vehicles_comboBox.Text.Substring(0, 1))).ToList();
+            vehicleNumbers_comboBox.DataSource = numsList;
         }
     }
 }
