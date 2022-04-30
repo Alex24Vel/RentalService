@@ -95,6 +95,7 @@
             this.vehicles_comboBox.Name = "vehicles_comboBox";
             this.vehicles_comboBox.Size = new System.Drawing.Size(233, 35);
             this.vehicles_comboBox.TabIndex = 3;
+            this.vehicles_comboBox.SelectedIndexChanged += new System.EventHandler(this.vehicles_comboBox_SelectedIndexChanged);
             // 
             // ordersBindingSource
             // 

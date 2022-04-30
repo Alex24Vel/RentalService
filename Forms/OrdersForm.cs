@@ -23,12 +23,12 @@ namespace Forms
         private void OrdersForm_Load(object sender, EventArgs e)
         {
             VehicleNumbers numbers = new VehicleNumbers();
-            List<VehicleNumbers> list = new List<VehicleNumbers>();
             numbers.ReadNumbers(list);
             vehicleNumbers_comboBox.DataSource = list;
         }
 
-        internal List<Orders> ordersList = new List<Orders>();
+        internal List<Orders> ordersList = new List<Orders>();           
+        internal List<VehicleNumbers> list = new List<VehicleNumbers>(); // using to show numbers without hardcoding them
         readonly string ordersPath = @"T:\Microsoft Visual Studio\Projects\Orders.txt";
 
         private void add_button_Click(object sender, EventArgs e)
@@ -96,5 +96,12 @@ namespace Forms
             orders_dataGridView.DataSource = tmpSource;
         }
 
+        private void vehicles_comboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            VehicleNumbers numbers = new VehicleNumbers();
+            numbers.ReadNumbers(list);
+            list = list.Where(x => x.Number.Contains(vehicles_comboBox.Text.Substring(0,1))).ToList();
+            vehicleNumbers_comboBox.DataSource = list;
+        }
     }
 }
