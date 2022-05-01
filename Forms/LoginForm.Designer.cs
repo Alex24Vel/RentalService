@@ -89,6 +89,7 @@
             this.username_textBox.Name = "username_textBox";
             this.username_textBox.Size = new System.Drawing.Size(187, 33);
             this.username_textBox.TabIndex = 2;
+            this.username_textBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.username_textBox_KeyDown);
             // 
             // password_label
             // 

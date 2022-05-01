@@ -58,6 +58,7 @@
             this.ordersExplorer_button = new System.Windows.Forms.Button();
             this.showOnly_label = new System.Windows.Forms.Label();
             this.showBy_comboBox = new System.Windows.Forms.ComboBox();
+            this.delete_button = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ordersBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.orders_dataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vehicleNumbersBindingSource)).BeginInit();
@@ -176,7 +177,7 @@
             this.load_button.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
             this.load_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.load_button.ForeColor = System.Drawing.Color.Black;
-            this.load_button.Location = new System.Drawing.Point(271, 520);
+            this.load_button.Location = new System.Drawing.Point(271, 518);
             this.load_button.Name = "load_button";
             this.load_button.Size = new System.Drawing.Size(113, 58);
             this.load_button.TabIndex = 12;
@@ -302,7 +303,7 @@
             this.clearDataBase_button.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
             this.clearDataBase_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.clearDataBase_button.ForeColor = System.Drawing.Color.Black;
-            this.clearDataBase_button.Location = new System.Drawing.Point(506, 520);
+            this.clearDataBase_button.Location = new System.Drawing.Point(506, 518);
             this.clearDataBase_button.Name = "clearDataBase_button";
             this.clearDataBase_button.Size = new System.Drawing.Size(110, 60);
             this.clearDataBase_button.TabIndex = 22;
@@ -316,7 +317,7 @@
             this.update_button.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
             this.update_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.update_button.ForeColor = System.Drawing.Color.Black;
-            this.update_button.Location = new System.Drawing.Point(390, 520);
+            this.update_button.Location = new System.Drawing.Point(390, 518);
             this.update_button.Name = "update_button";
             this.update_button.Size = new System.Drawing.Size(110, 60);
             this.update_button.TabIndex = 23;
@@ -344,10 +345,11 @@
             this.ordersExplorer_button.BackColor = System.Drawing.Color.AliceBlue;
             this.ordersExplorer_button.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
             this.ordersExplorer_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ordersExplorer_button.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ordersExplorer_button.ForeColor = System.Drawing.Color.Black;
-            this.ordersExplorer_button.Location = new System.Drawing.Point(622, 520);
+            this.ordersExplorer_button.Location = new System.Drawing.Point(622, 518);
             this.ordersExplorer_button.Name = "ordersExplorer_button";
-            this.ordersExplorer_button.Size = new System.Drawing.Size(154, 68);
+            this.ordersExplorer_button.Size = new System.Drawing.Size(154, 60);
             this.ordersExplorer_button.TabIndex = 25;
             this.ordersExplorer_button.Text = "Show orders in file explorer";
             this.ordersExplorer_button.UseVisualStyleBackColor = false;
@@ -376,12 +378,28 @@
             this.showBy_comboBox.TabIndex = 27;
             this.showBy_comboBox.SelectedIndexChanged += new System.EventHandler(this.showBy_comboBox_SelectedIndexChanged);
             // 
+            // delete_button
+            // 
+            this.delete_button.BackColor = System.Drawing.Color.AliceBlue;
+            this.delete_button.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
+            this.delete_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.delete_button.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.delete_button.ForeColor = System.Drawing.Color.Black;
+            this.delete_button.Location = new System.Drawing.Point(782, 518);
+            this.delete_button.Name = "delete_button";
+            this.delete_button.Size = new System.Drawing.Size(119, 60);
+            this.delete_button.TabIndex = 28;
+            this.delete_button.Text = "Delete selected row";
+            this.delete_button.UseVisualStyleBackColor = false;
+            this.delete_button.Click += new System.EventHandler(this.delete_button_Click);
+            // 
             // OrdersForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 27F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
             this.ClientSize = new System.Drawing.Size(1022, 633);
+            this.Controls.Add(this.delete_button);
             this.Controls.Add(this.showBy_comboBox);
             this.Controls.Add(this.showOnly_label);
             this.Controls.Add(this.ordersExplorer_button);
@@ -447,5 +465,6 @@
         private System.Windows.Forms.Button ordersExplorer_button;
         private System.Windows.Forms.Label showOnly_label;
         private System.Windows.Forms.ComboBox showBy_comboBox;
+        private System.Windows.Forms.Button delete_button;
     }
 }

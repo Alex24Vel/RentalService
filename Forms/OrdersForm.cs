@@ -28,7 +28,6 @@ namespace Forms
         internal List<VehicleNumbers> numsList = new List<VehicleNumbers>();
         readonly string ordersPath = @"T:\Microsoft Visual Studio\Projects\Orders.txt";
 
-
         private void add_button_Click(object sender, EventArgs e)
         {
             if (renter_textBox.TextLength <= 1 || rentDate_textBox.TextLength <= 1 || dueDate_textBox.TextLength <= 1)
@@ -61,13 +60,34 @@ namespace Forms
             rentDate_textBox.Clear();
             dueDate_textBox.Clear();
         }
-        private void cancel_button_Click(object sender, EventArgs e)
+        private void vehicles_comboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            this.Close();
-            MainForm mainForm = new MainForm();
-            mainForm.Show();
+            VehicleNumbers numbers = new VehicleNumbers();
+            numbers.ReadNumbers(numsList);
+            numsList = numsList.Where(x => x.Number.Contains(vehicles_comboBox.Text.Substring(0, 1))).ToList();
+
+            List<Orders> tmp = new List<Orders>();
+            Orders orders = new Orders();
+            orders.getData(tmp);
+            try
+            {
+                for (int i = 0; i < numsList.Count; i++)
+                    for (int j = 0; j < tmp.Count; j++)
+                        if (numsList[i].Number.Equals(tmp[j].VehicleNumber))
+                            numsList.Remove(numsList[i]);
+            }
+            catch (ArgumentOutOfRangeException) { vehicleNumbers_comboBox.Text = $"No {vehicles_comboBox.Text}s available"; }
+            finally { vehicleNumbers_comboBox.DataSource = numsList; }
         }
 
+        private void showBy_comboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            List<Orders> tmpSource = new List<Orders>();
+            Orders tmp = new Orders();
+            tmp.getData(tmpSource);
+            tmpSource = tmpSource.Where(x => x.Vehicle == showBy_comboBox.Text).ToList();
+            orders_dataGridView.DataSource = tmpSource;
+        }
 
         private void load_button_Click(object sender, EventArgs e)
         {
@@ -91,34 +111,18 @@ namespace Forms
         {
             Process.Start(new ProcessStartInfo { FileName = "explorer", Arguments = $"/n,/select,{ordersPath}" });
         }
-
-
-        private void showBy_comboBox_SelectedIndexChanged(object sender, EventArgs e)
+        private void delete_button_Click(object sender, EventArgs e)
         {
-            List<Orders> tmpSource = new List<Orders>();
-            Orders tmp = new Orders();
-            tmp.getData(tmpSource);
-            tmpSource = tmpSource.Where(x => x.Vehicle == showBy_comboBox.Text).ToList();
-            orders_dataGridView.DataSource = tmpSource;
+            List<string> tmp = File.ReadAllLines(ordersPath).ToList();
+            tmp.RemoveAt(orders_dataGridView.CurrentCell.RowIndex);
+            File.WriteAllLines(ordersPath, tmp.ToArray());
         }
-        private void vehicles_comboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            VehicleNumbers numbers = new VehicleNumbers();
-            numbers.ReadNumbers(numsList);
-            numsList = numsList.Where(x => x.Number.Contains(vehicles_comboBox.Text.Substring(0, 1))).ToList();
 
-            List<Orders> tmp = new List<Orders>();
-            Orders orders = new Orders();
-            orders.getData(tmp);
-            try
-            {
-                for (int i = 0; i < numsList.Count; i++)
-                    for (int j = 0; j < tmp.Count; j++)
-                        if (numsList[i].Number.Equals(tmp[j].VehicleNumber))
-                            numsList.Remove(numsList[i]);
-            }
-            catch (ArgumentOutOfRangeException) { vehicleNumbers_comboBox.Text = $"No {vehicles_comboBox.Text}s available"; }
-            finally { vehicleNumbers_comboBox.DataSource = numsList; }
+        private void cancel_button_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            MainForm mainForm = new MainForm();
+            mainForm.Show();
         }
     }
 }
