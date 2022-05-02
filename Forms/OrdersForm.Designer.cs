@@ -32,7 +32,6 @@
             this.addOrder_textBox = new System.Windows.Forms.TextBox();
             this.chooseVehicle_label = new System.Windows.Forms.Label();
             this.vehicles_comboBox = new System.Windows.Forms.ComboBox();
-            this.ordersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.number_label = new System.Windows.Forms.Label();
             this.rentDate_label = new System.Windows.Forms.Label();
             this.add_button = new System.Windows.Forms.Button();
@@ -44,23 +43,24 @@
             this.renter_label = new System.Windows.Forms.Label();
             this.renter_textBox = new System.Windows.Forms.TextBox();
             this.orders_dataGridView = new System.Windows.Forms.DataGridView();
-            this.renterDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.vehicleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.vehicleNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rentDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dueDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rentDate_textBox = new System.Windows.Forms.TextBox();
             this.dueDate_textBox = new System.Windows.Forms.TextBox();
             this.clearDataBase_button = new System.Windows.Forms.Button();
             this.update_button = new System.Windows.Forms.Button();
             this.vehicleNumbers_comboBox = new System.Windows.Forms.ComboBox();
-            this.vehicleNumbersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ordersExplorer_button = new System.Windows.Forms.Button();
             this.showOnly_label = new System.Windows.Forms.Label();
             this.showBy_comboBox = new System.Windows.Forms.ComboBox();
             this.delete_button = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.ordersBindingSource)).BeginInit();
+            this.ordersBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vehicleNumbersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.orders_dataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ordersBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vehicleNumbersBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -86,7 +86,6 @@
             // 
             // vehicles_comboBox
             // 
-            this.vehicles_comboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.ordersBindingSource, "Vehicle", true));
             this.vehicles_comboBox.FormattingEnabled = true;
             this.vehicles_comboBox.Items.AddRange(new object[] {
             "Car",
@@ -98,10 +97,6 @@
             this.vehicles_comboBox.Size = new System.Drawing.Size(233, 35);
             this.vehicles_comboBox.TabIndex = 3;
             this.vehicles_comboBox.SelectedIndexChanged += new System.EventHandler(this.vehicles_comboBox_SelectedIndexChanged);
-            // 
-            // ordersBindingSource
-            // 
-            this.ordersBindingSource.DataSource = typeof(RentalServiceLib.Orders);
             // 
             // number_label
             // 
@@ -220,11 +215,11 @@
             this.orders_dataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.orders_dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.orders_dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.renterDataGridViewTextBoxColumn,
-            this.vehicleDataGridViewTextBoxColumn,
-            this.vehicleNumberDataGridViewTextBoxColumn,
-            this.rentDateDataGridViewTextBoxColumn,
-            this.dueDateDataGridViewTextBoxColumn});
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn5});
             this.orders_dataGridView.DataSource = this.ordersBindingSource;
             this.orders_dataGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.orders_dataGridView.GridColor = System.Drawing.Color.Orange;
@@ -235,51 +230,6 @@
             this.orders_dataGridView.ReadOnly = true;
             this.orders_dataGridView.Size = new System.Drawing.Size(741, 426);
             this.orders_dataGridView.TabIndex = 18;
-            // 
-            // renterDataGridViewTextBoxColumn
-            // 
-            this.renterDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.renterDataGridViewTextBoxColumn.DataPropertyName = "Renter";
-            this.renterDataGridViewTextBoxColumn.HeaderText = "Renter";
-            this.renterDataGridViewTextBoxColumn.Name = "renterDataGridViewTextBoxColumn";
-            this.renterDataGridViewTextBoxColumn.ReadOnly = true;
-            this.renterDataGridViewTextBoxColumn.Width = 98;
-            // 
-            // vehicleDataGridViewTextBoxColumn
-            // 
-            this.vehicleDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.vehicleDataGridViewTextBoxColumn.DataPropertyName = "Vehicle";
-            this.vehicleDataGridViewTextBoxColumn.HeaderText = "Vehicle";
-            this.vehicleDataGridViewTextBoxColumn.Name = "vehicleDataGridViewTextBoxColumn";
-            this.vehicleDataGridViewTextBoxColumn.ReadOnly = true;
-            this.vehicleDataGridViewTextBoxColumn.Width = 101;
-            // 
-            // vehicleNumberDataGridViewTextBoxColumn
-            // 
-            this.vehicleNumberDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.vehicleNumberDataGridViewTextBoxColumn.DataPropertyName = "VehicleNumber";
-            this.vehicleNumberDataGridViewTextBoxColumn.HeaderText = "Vehicle number";
-            this.vehicleNumberDataGridViewTextBoxColumn.Name = "vehicleNumberDataGridViewTextBoxColumn";
-            this.vehicleNumberDataGridViewTextBoxColumn.ReadOnly = true;
-            this.vehicleNumberDataGridViewTextBoxColumn.Width = 179;
-            // 
-            // rentDateDataGridViewTextBoxColumn
-            // 
-            this.rentDateDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.rentDateDataGridViewTextBoxColumn.DataPropertyName = "RentDate";
-            this.rentDateDataGridViewTextBoxColumn.HeaderText = "Rent date";
-            this.rentDateDataGridViewTextBoxColumn.Name = "rentDateDataGridViewTextBoxColumn";
-            this.rentDateDataGridViewTextBoxColumn.ReadOnly = true;
-            this.rentDateDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // dueDateDataGridViewTextBoxColumn
-            // 
-            this.dueDateDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dueDateDataGridViewTextBoxColumn.DataPropertyName = "DueDate";
-            this.dueDateDataGridViewTextBoxColumn.HeaderText = "Due date";
-            this.dueDateDataGridViewTextBoxColumn.Name = "dueDateDataGridViewTextBoxColumn";
-            this.dueDateDataGridViewTextBoxColumn.ReadOnly = true;
-            this.dueDateDataGridViewTextBoxColumn.Width = 120;
             // 
             // rentDate_textBox
             // 
@@ -336,10 +286,6 @@
             this.vehicleNumbers_comboBox.TabIndex = 24;
             this.vehicleNumbers_comboBox.ValueMember = "Number";
             // 
-            // vehicleNumbersBindingSource
-            // 
-            this.vehicleNumbersBindingSource.DataSource = typeof(RentalServiceLib.VehicleNumbers);
-            // 
             // ordersExplorer_button
             // 
             this.ordersExplorer_button.BackColor = System.Drawing.Color.AliceBlue;
@@ -393,6 +339,59 @@
             this.delete_button.UseVisualStyleBackColor = false;
             this.delete_button.Click += new System.EventHandler(this.delete_button_Click);
             // 
+            // ordersBindingSource
+            // 
+            this.ordersBindingSource.DataSource = typeof(RentalServiceLib.Orders);
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "Renter";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Renter";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 98;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Vehicle";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Vehicle";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Width = 101;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "VehicleNumber";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Vehicle number";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.Width = 179;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "RentDate";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Rent date";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.dataGridViewTextBoxColumn4.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "DueDate";
+            this.dataGridViewTextBoxColumn5.HeaderText = "Due date";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            this.dataGridViewTextBoxColumn5.Width = 120;
+            // 
+            // vehicleNumbersBindingSource
+            // 
+            this.vehicleNumbersBindingSource.DataSource = typeof(RentalServiceLib.VehicleNumbers);
+            // 
             // OrdersForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 27F);
@@ -427,8 +426,8 @@
             this.Name = "OrdersForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Orders ";
-            ((System.ComponentModel.ISupportInitialize)(this.ordersBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.orders_dataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ordersBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vehicleNumbersBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -445,7 +444,6 @@
         private System.Windows.Forms.Button clear_button;
         private System.Windows.Forms.Label orderstext_label;
         private System.Windows.Forms.Button load_button;
-        private System.Windows.Forms.BindingSource ordersBindingSource;
         private System.Windows.Forms.Label dueDate_label;
         private System.Windows.Forms.Label renter_label;
         private System.Windows.Forms.DataGridView orders_dataGridView;
@@ -461,10 +459,16 @@
         private System.Windows.Forms.Button clearDataBase_button;
         private System.Windows.Forms.Button update_button;
         internal System.Windows.Forms.ComboBox vehicleNumbers_comboBox;
-        private System.Windows.Forms.BindingSource vehicleNumbersBindingSource;
         private System.Windows.Forms.Button ordersExplorer_button;
         private System.Windows.Forms.Label showOnly_label;
         private System.Windows.Forms.ComboBox showBy_comboBox;
         private System.Windows.Forms.Button delete_button;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.BindingSource ordersBindingSource;
+        private System.Windows.Forms.BindingSource vehicleNumbersBindingSource;
     }
 }
