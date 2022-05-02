@@ -36,9 +36,7 @@ namespace Forms
                 password_textBox.Clear();
                 password_textBox.Focus();
             }
-
         }
-
         private void clear_button_Click(object sender, EventArgs e)
         {
             username_textBox.Clear();
@@ -49,6 +47,13 @@ namespace Forms
         {
             if (e.KeyCode == Keys.Enter)
                 login_button_Click(sender, e);
+            if (e.KeyCode == Keys.Up)
+                username_textBox.Focus();
+        }
+        private void username_textBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter || e.KeyCode == Keys.Down)
+                password_textBox.Focus();
         }
     }
 }

@@ -59,6 +59,7 @@ namespace RentalServiceLib
             }
         }
         
+
         public void ShowNumbers()
         {
             foreach (var number in numbersList)

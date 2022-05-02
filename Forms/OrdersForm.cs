@@ -11,6 +11,10 @@ using System.Windows.Forms;
 using RentalServiceLib;
 using System.Diagnostics;
 
+/* 
+ * todo Bug_1:  [vehicles_comboBox_SelectedIndexChanged] shows used numbers after all free were also used *hard to fix*
+*/
+
 namespace Forms
 {
     public partial class OrdersForm : Form
@@ -20,51 +24,70 @@ namespace Forms
             InitializeComponent();
         }
 
-        private void OrdersForm_Load(object sender, EventArgs e)
-        {
-            VehicleNumbers numbers = new VehicleNumbers();
-            List<VehicleNumbers> list = new List<VehicleNumbers>();
-            numbers.ReadNumbers(list);
-            vehicleNumbers_comboBox.DataSource = list;
-
-            // loads data for showBy_comboBox_SelectedIndexChanged() so you don't have to click Load data beforehand
-            Orders tmp = new Orders();
-            tmp.getData(ordersList);
-        }
-
         internal List<Orders> ordersList = new List<Orders>();
+        internal List<VehicleNumbers> numsList = new List<VehicleNumbers>();
         readonly string ordersPath = @"T:\Microsoft Visual Studio\Projects\Orders.txt";
 
         private void add_button_Click(object sender, EventArgs e)
         {
-            Orders order = new Orders();
-            order.Renter = renter_textBox.Text;
-            order.Vehicle = vehicles_comboBox.Text;
-            order.VehicleNumber = vehicleNumbers_comboBox.Text;
-            order.RentDate = rentDate_textBox.Text.ToString();
-            order.DueDate = dueDate_textBox.Text.ToString();
-            ordersList.Add(order);
+            if (renter_textBox.TextLength <= 1 || rentDate_textBox.TextLength <= 1 || dueDate_textBox.TextLength <= 1)
+                MessageBox.Show("Fill in all fields!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            else
+            {
+                Orders order = new Orders();
+                order.Renter = renter_textBox.Text;
+                order.Vehicle = vehicles_comboBox.Text;
+                order.VehicleNumber = vehicleNumbers_comboBox.Text;
+                order.RentDate = rentDate_textBox.Text.ToString();
+                order.DueDate = dueDate_textBox.Text.ToString();
+                ordersList.Add(order);
 
-            string fileStr = $"{order.Renter},{order.Vehicle},{order.VehicleNumber}," +
-                $"{order.RentDate},{order.DueDate}";
-            using (StreamWriter writer = new StreamWriter(ordersPath, true))
-                writer.WriteLine(fileStr);
+                string fileStr = $"{order.Renter},{order.Vehicle},{order.VehicleNumber}," +
+                    $"{order.RentDate},{order.DueDate}";
+                using (StreamWriter writer = new StreamWriter(ordersPath, true))
+                    writer.WriteLine(fileStr);
+            }
         }
         private void clear_button_Click(object sender, EventArgs e)
         {
             renter_textBox.Clear();
             vehicles_comboBox.ResetText();
+
             vehicleNumbers_comboBox.ResetText();
+            numsList.Clear();
+            vehicleNumbers_comboBox.DataSource = numsList.Distinct().ToList();
+
             rentDate_textBox.Clear();
             dueDate_textBox.Clear();
         }
-        private void cancel_button_Click(object sender, EventArgs e)
+        private void vehicles_comboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            this.Close();
-            MainForm mainForm = new MainForm();
-            mainForm.Show();
+            VehicleNumbers numbers = new VehicleNumbers();
+            numbers.ReadNumbers(numsList);
+            numsList = numsList.Where(x => x.Number.Contains(vehicles_comboBox.Text.Substring(0, 1))).ToList();
+
+            List<Orders> tmp = new List<Orders>();
+            Orders orders = new Orders();
+            orders.getData(tmp);
+            try
+            {
+                for (int i = 0; i < numsList.Count; i++)
+                    for (int j = 0; j < tmp.Count; j++)
+                        if (numsList[i].Number.Equals(tmp[j].VehicleNumber))
+                            numsList.Remove(numsList[i]);
+            }
+            catch (ArgumentOutOfRangeException) { vehicleNumbers_comboBox.Text = $"No {vehicles_comboBox.Text}s available"; }
+            finally { vehicleNumbers_comboBox.DataSource = numsList; }
         }
 
+        private void showBy_comboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            List<Orders> tmpSource = new List<Orders>();
+            Orders tmp = new Orders();
+            tmp.getData(tmpSource);
+            tmpSource = tmpSource.Where(x => x.Vehicle == showBy_comboBox.Text).ToList();
+            orders_dataGridView.DataSource = tmpSource;
+        }
 
         private void load_button_Click(object sender, EventArgs e)
         {
@@ -74,10 +97,9 @@ namespace Forms
         }
         private void clearDataBase_button_Click(object sender, EventArgs e)
         {
-            orders_dataGridView.DataSource = ordersList.Distinct();
             ordersList.Clear();
             showBy_comboBox.ResetText();
-            ordersBindingSource.DataSource = ordersList;
+            orders_dataGridView.DataSource = ordersList.Distinct();
         }
         private void update_button_Click(object sender, EventArgs e)
         {
@@ -89,14 +111,18 @@ namespace Forms
         {
             Process.Start(new ProcessStartInfo { FileName = "explorer", Arguments = $"/n,/select,{ordersPath}" });
         }
-
-
-        private void showBy_comboBox_SelectedIndexChanged(object sender, EventArgs e)
+        private void delete_button_Click(object sender, EventArgs e)
         {
-            List<Orders> tmpSource = new List<Orders>(ordersList);
-            tmpSource = tmpSource.Where(x => x.Vehicle == showBy_comboBox.Text).ToList();
-            orders_dataGridView.DataSource = tmpSource;
+            List<string> tmp = File.ReadAllLines(ordersPath).ToList();
+            tmp.RemoveAt(orders_dataGridView.CurrentCell.RowIndex);
+            File.WriteAllLines(ordersPath, tmp.ToArray());
         }
 
+        private void cancel_button_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            MainForm mainForm = new MainForm();
+            mainForm.Show();
+        }
     }
 }
