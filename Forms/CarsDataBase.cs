@@ -60,13 +60,15 @@ namespace Forms
 
         private void add_button_Click(object sender, EventArgs e)
         {
-            Cars car = new Cars();
-            car.Make = make_textBox.Text;
-            car.Model = model_textBox.Text;
-            car.Year = year_textBox.Text.ToString();
-            car.PricePerDay = pricePerDay_textBox.Text.ToString();
-            car.CarType = carType_textBox.Text;
-            car.Number = number_textBox.Text;
+            Cars car = new Cars
+            {
+                Make = make_textBox.Text,
+                Model = model_textBox.Text,
+                Year = year_textBox.Text.ToString(),
+                PricePerDay = pricePerDay_textBox.Text.ToString(),
+                CarType = carType_textBox.Text,
+                Number = number_textBox.Text
+            };
             Carslist.Add(car);
 
             string fileStr = $"{car.Make},{car.Model},{car.Year}," +

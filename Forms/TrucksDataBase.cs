@@ -8,8 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using RentalServiceLib;
 using System.Diagnostics;
+using RentalServiceLib;
 
 namespace Forms
 {
@@ -60,13 +60,15 @@ namespace Forms
 
         private void add_button_Click(object sender, EventArgs e)
         {
-            Trucks truck = new Trucks();
-            truck.Make = make_textBox.Text;
-            truck.Model = model_textBox.Text;
-            truck.Year = year_textBox.Text.ToString();
-            truck.PricePerDay = pricePerDay_textBox.Text.ToString();
-            truck.TruckType = truckType_textBox.Text;
-            truck.Number = number_comboBox.Text.ToString();
+            Trucks truck = new Trucks
+            {
+                Make = make_textBox.Text,
+                Model = model_textBox.Text,
+                Year = year_textBox.Text,
+                PricePerDay = pricePerDay_textBox.Text,
+                TruckType = truckType_textBox.Text,
+                Number = number_textBox.Text
+            };
             truckslist.Add(truck);
 
             string fileStr = $"{truck.Make},{truck.Model},{truck.Year}," +
@@ -81,7 +83,7 @@ namespace Forms
             year_textBox.Clear();
             pricePerDay_textBox.Clear();
             truckType_textBox.Clear();
-            number_comboBox.ResetText();
+            number_textBox.Clear();
         }
     }
 }

@@ -46,7 +46,6 @@
             this.addTruck_label = new System.Windows.Forms.Label();
             this.clear_button = new System.Windows.Forms.Button();
             this.add_button = new System.Windows.Forms.Button();
-            this.number_comboBox = new System.Windows.Forms.ComboBox();
             this.truckType_textBox = new System.Windows.Forms.TextBox();
             this.pricePerDay_textBox = new System.Windows.Forms.TextBox();
             this.year_textBox = new System.Windows.Forms.TextBox();
@@ -59,6 +58,7 @@
             this.model_label = new System.Windows.Forms.Label();
             this.make_label = new System.Windows.Forms.Label();
             this.delete_button = new System.Windows.Forms.Button();
+            this.number_textBox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.trucks_dataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trucksBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -261,17 +261,6 @@
             this.add_button.UseVisualStyleBackColor = false;
             this.add_button.Click += new System.EventHandler(this.add_button_Click);
             // 
-            // number_comboBox
-            // 
-            this.number_comboBox.DataSource = this.trucksBindingSource;
-            this.number_comboBox.DisplayMember = "Number";
-            this.number_comboBox.FormattingEnabled = true;
-            this.number_comboBox.Location = new System.Drawing.Point(17, 459);
-            this.number_comboBox.Name = "number_comboBox";
-            this.number_comboBox.Size = new System.Drawing.Size(207, 35);
-            this.number_comboBox.TabIndex = 31;
-            this.number_comboBox.ValueMember = "Number";
-            // 
             // truckType_textBox
             // 
             this.truckType_textBox.Location = new System.Drawing.Point(17, 383);
@@ -376,16 +365,23 @@
             this.delete_button.UseVisualStyleBackColor = false;
             this.delete_button.Click += new System.EventHandler(this.delete_button_Click);
             // 
+            // number_textBox
+            // 
+            this.number_textBox.Location = new System.Drawing.Point(17, 459);
+            this.number_textBox.Name = "number_textBox";
+            this.number_textBox.Size = new System.Drawing.Size(207, 34);
+            this.number_textBox.TabIndex = 35;
+            // 
             // TrucksDataBase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 27F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
             this.ClientSize = new System.Drawing.Size(1083, 633);
+            this.Controls.Add(this.number_textBox);
             this.Controls.Add(this.delete_button);
             this.Controls.Add(this.clear_button);
             this.Controls.Add(this.add_button);
-            this.Controls.Add(this.number_comboBox);
             this.Controls.Add(this.truckType_textBox);
             this.Controls.Add(this.pricePerDay_textBox);
             this.Controls.Add(this.year_textBox);
@@ -409,7 +405,7 @@
             this.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.Name = "TrucksDataBase";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "TrucksDataBase";
+            this.Text = "Trucks";
             ((System.ComponentModel.ISupportInitialize)(this.trucks_dataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trucksBindingSource)).EndInit();
             this.ResumeLayout(false);
@@ -436,7 +432,6 @@
         private System.Windows.Forms.Label addTruck_label;
         private System.Windows.Forms.Button clear_button;
         private System.Windows.Forms.Button add_button;
-        private System.Windows.Forms.ComboBox number_comboBox;
         private System.Windows.Forms.TextBox truckType_textBox;
         private System.Windows.Forms.TextBox pricePerDay_textBox;
         private System.Windows.Forms.TextBox year_textBox;
@@ -449,5 +444,6 @@
         private System.Windows.Forms.Label model_label;
         private System.Windows.Forms.Label make_label;
         private System.Windows.Forms.Button delete_button;
+        private System.Windows.Forms.TextBox number_textBox;
     }
 }
