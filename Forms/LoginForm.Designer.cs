@@ -48,6 +48,7 @@
             this.login_groupBox.Controls.Add(this.username_textBox);
             this.login_groupBox.Controls.Add(this.password_label);
             this.login_groupBox.Controls.Add(this.username_label);
+            this.login_groupBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.login_groupBox.Location = new System.Drawing.Point(42, 70);
             this.login_groupBox.Name = "login_groupBox";
             this.login_groupBox.Size = new System.Drawing.Size(346, 208);
@@ -56,22 +57,28 @@
             // 
             // clear_button
             // 
+            this.clear_button.BackColor = System.Drawing.Color.AliceBlue;
+            this.clear_button.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
+            this.clear_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.clear_button.Location = new System.Drawing.Point(211, 136);
             this.clear_button.Name = "clear_button";
             this.clear_button.Size = new System.Drawing.Size(116, 52);
             this.clear_button.TabIndex = 5;
             this.clear_button.Text = "Clear";
-            this.clear_button.UseVisualStyleBackColor = true;
+            this.clear_button.UseVisualStyleBackColor = false;
             this.clear_button.Click += new System.EventHandler(this.clear_button_Click);
             // 
             // login_button
             // 
+            this.login_button.BackColor = System.Drawing.Color.AliceBlue;
+            this.login_button.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
+            this.login_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.login_button.Location = new System.Drawing.Point(12, 136);
             this.login_button.Name = "login_button";
             this.login_button.Size = new System.Drawing.Size(116, 52);
             this.login_button.TabIndex = 4;
             this.login_button.Text = "Login";
-            this.login_button.UseVisualStyleBackColor = true;
+            this.login_button.UseVisualStyleBackColor = false;
             this.login_button.Click += new System.EventHandler(this.login_button_Click);
             // 
             // password_textBox
@@ -111,20 +118,26 @@
             // 
             // exit_button
             // 
-            this.exit_button.Location = new System.Drawing.Point(309, 302);
+            this.exit_button.BackColor = System.Drawing.Color.AliceBlue;
+            this.exit_button.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
+            this.exit_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.exit_button.Location = new System.Drawing.Point(327, 303);
             this.exit_button.Name = "exit_button";
-            this.exit_button.Size = new System.Drawing.Size(116, 52);
+            this.exit_button.Size = new System.Drawing.Size(98, 51);
             this.exit_button.TabIndex = 5;
             this.exit_button.Text = "Exit";
-            this.exit_button.UseVisualStyleBackColor = true;
+            this.exit_button.UseVisualStyleBackColor = false;
             this.exit_button.Click += new System.EventHandler(this.exit_button_Click);
             // 
             // message_textBox
             // 
+            this.message_textBox.BackColor = System.Drawing.Color.LightSteelBlue;
             this.message_textBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.message_textBox.Location = new System.Drawing.Point(54, 38);
+            this.message_textBox.Cursor = System.Windows.Forms.Cursors.No;
+            this.message_textBox.Location = new System.Drawing.Point(42, 38);
             this.message_textBox.Name = "message_textBox";
-            this.message_textBox.Size = new System.Drawing.Size(257, 26);
+            this.message_textBox.ReadOnly = true;
+            this.message_textBox.Size = new System.Drawing.Size(217, 26);
             this.message_textBox.TabIndex = 6;
             this.message_textBox.TabStop = false;
             this.message_textBox.Text = "Authorize to access data";
@@ -133,7 +146,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 26F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.LightSteelBlue;
             this.ClientSize = new System.Drawing.Size(437, 366);
             this.Controls.Add(this.message_textBox);
             this.Controls.Add(this.exit_button);

@@ -32,6 +32,13 @@
             this.close_button = new System.Windows.Forms.Button();
             this.load_button = new System.Windows.Forms.Button();
             this.cars_dataGridView = new System.Windows.Forms.DataGridView();
+            this.makeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.modelDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.yearDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pricePerDayDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.carTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.carsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cars_label = new System.Windows.Forms.Label();
             this.addCar_label = new System.Windows.Forms.Label();
             this.make_label = new System.Windows.Forms.Label();
@@ -52,13 +59,6 @@
             this.clearDataBase_button = new System.Windows.Forms.Button();
             this.delete_button = new System.Windows.Forms.Button();
             this.number_textBox = new System.Windows.Forms.TextBox();
-            this.makeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.modelDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.yearDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pricePerDayDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.carTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.numberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.carsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.cars_dataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.carsBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -68,7 +68,7 @@
             this.close_button.BackColor = System.Drawing.Color.AliceBlue;
             this.close_button.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
             this.close_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.close_button.Location = new System.Drawing.Point(925, 569);
+            this.close_button.Location = new System.Drawing.Point(925, 524);
             this.close_button.Name = "close_button";
             this.close_button.Size = new System.Drawing.Size(85, 52);
             this.close_button.TabIndex = 0;
@@ -111,6 +111,64 @@
             this.cars_dataGridView.ReadOnly = true;
             this.cars_dataGridView.Size = new System.Drawing.Size(774, 445);
             this.cars_dataGridView.TabIndex = 3;
+            // 
+            // makeDataGridViewTextBoxColumn
+            // 
+            this.makeDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.makeDataGridViewTextBoxColumn.DataPropertyName = "Make";
+            this.makeDataGridViewTextBoxColumn.HeaderText = "Make";
+            this.makeDataGridViewTextBoxColumn.Name = "makeDataGridViewTextBoxColumn";
+            this.makeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.makeDataGridViewTextBoxColumn.Width = 87;
+            // 
+            // modelDataGridViewTextBoxColumn
+            // 
+            this.modelDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.modelDataGridViewTextBoxColumn.DataPropertyName = "Model";
+            this.modelDataGridViewTextBoxColumn.HeaderText = "Model";
+            this.modelDataGridViewTextBoxColumn.Name = "modelDataGridViewTextBoxColumn";
+            this.modelDataGridViewTextBoxColumn.ReadOnly = true;
+            this.modelDataGridViewTextBoxColumn.Width = 96;
+            // 
+            // yearDataGridViewTextBoxColumn
+            // 
+            this.yearDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.yearDataGridViewTextBoxColumn.DataPropertyName = "Year";
+            this.yearDataGridViewTextBoxColumn.HeaderText = "Year";
+            this.yearDataGridViewTextBoxColumn.Name = "yearDataGridViewTextBoxColumn";
+            this.yearDataGridViewTextBoxColumn.ReadOnly = true;
+            this.yearDataGridViewTextBoxColumn.Width = 76;
+            // 
+            // pricePerDayDataGridViewTextBoxColumn
+            // 
+            this.pricePerDayDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.pricePerDayDataGridViewTextBoxColumn.DataPropertyName = "PricePerDay";
+            this.pricePerDayDataGridViewTextBoxColumn.HeaderText = "Price per day";
+            this.pricePerDayDataGridViewTextBoxColumn.Name = "pricePerDayDataGridViewTextBoxColumn";
+            this.pricePerDayDataGridViewTextBoxColumn.ReadOnly = true;
+            this.pricePerDayDataGridViewTextBoxColumn.Width = 155;
+            // 
+            // carTypeDataGridViewTextBoxColumn
+            // 
+            this.carTypeDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.carTypeDataGridViewTextBoxColumn.DataPropertyName = "CarType";
+            this.carTypeDataGridViewTextBoxColumn.HeaderText = "Car type";
+            this.carTypeDataGridViewTextBoxColumn.Name = "carTypeDataGridViewTextBoxColumn";
+            this.carTypeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.carTypeDataGridViewTextBoxColumn.Width = 113;
+            // 
+            // numberDataGridViewTextBoxColumn
+            // 
+            this.numberDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.numberDataGridViewTextBoxColumn.DataPropertyName = "Number";
+            this.numberDataGridViewTextBoxColumn.HeaderText = "Number";
+            this.numberDataGridViewTextBoxColumn.Name = "numberDataGridViewTextBoxColumn";
+            this.numberDataGridViewTextBoxColumn.ReadOnly = true;
+            this.numberDataGridViewTextBoxColumn.Width = 112;
+            // 
+            // carsBindingSource
+            // 
+            this.carsBindingSource.DataSource = typeof(RentalServiceLib.Cars);
             // 
             // cars_label
             // 
@@ -309,70 +367,12 @@
             this.number_textBox.Size = new System.Drawing.Size(190, 34);
             this.number_textBox.TabIndex = 30;
             // 
-            // makeDataGridViewTextBoxColumn
-            // 
-            this.makeDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.makeDataGridViewTextBoxColumn.DataPropertyName = "Make";
-            this.makeDataGridViewTextBoxColumn.HeaderText = "Make";
-            this.makeDataGridViewTextBoxColumn.Name = "makeDataGridViewTextBoxColumn";
-            this.makeDataGridViewTextBoxColumn.ReadOnly = true;
-            this.makeDataGridViewTextBoxColumn.Width = 87;
-            // 
-            // modelDataGridViewTextBoxColumn
-            // 
-            this.modelDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.modelDataGridViewTextBoxColumn.DataPropertyName = "Model";
-            this.modelDataGridViewTextBoxColumn.HeaderText = "Model";
-            this.modelDataGridViewTextBoxColumn.Name = "modelDataGridViewTextBoxColumn";
-            this.modelDataGridViewTextBoxColumn.ReadOnly = true;
-            this.modelDataGridViewTextBoxColumn.Width = 96;
-            // 
-            // yearDataGridViewTextBoxColumn
-            // 
-            this.yearDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.yearDataGridViewTextBoxColumn.DataPropertyName = "Year";
-            this.yearDataGridViewTextBoxColumn.HeaderText = "Year";
-            this.yearDataGridViewTextBoxColumn.Name = "yearDataGridViewTextBoxColumn";
-            this.yearDataGridViewTextBoxColumn.ReadOnly = true;
-            this.yearDataGridViewTextBoxColumn.Width = 76;
-            // 
-            // pricePerDayDataGridViewTextBoxColumn
-            // 
-            this.pricePerDayDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.pricePerDayDataGridViewTextBoxColumn.DataPropertyName = "PricePerDay";
-            this.pricePerDayDataGridViewTextBoxColumn.HeaderText = "Price per day";
-            this.pricePerDayDataGridViewTextBoxColumn.Name = "pricePerDayDataGridViewTextBoxColumn";
-            this.pricePerDayDataGridViewTextBoxColumn.ReadOnly = true;
-            this.pricePerDayDataGridViewTextBoxColumn.Width = 155;
-            // 
-            // carTypeDataGridViewTextBoxColumn
-            // 
-            this.carTypeDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.carTypeDataGridViewTextBoxColumn.DataPropertyName = "CarType";
-            this.carTypeDataGridViewTextBoxColumn.HeaderText = "Car type";
-            this.carTypeDataGridViewTextBoxColumn.Name = "carTypeDataGridViewTextBoxColumn";
-            this.carTypeDataGridViewTextBoxColumn.ReadOnly = true;
-            this.carTypeDataGridViewTextBoxColumn.Width = 113;
-            // 
-            // numberDataGridViewTextBoxColumn
-            // 
-            this.numberDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.numberDataGridViewTextBoxColumn.DataPropertyName = "Number";
-            this.numberDataGridViewTextBoxColumn.HeaderText = "Number";
-            this.numberDataGridViewTextBoxColumn.Name = "numberDataGridViewTextBoxColumn";
-            this.numberDataGridViewTextBoxColumn.ReadOnly = true;
-            this.numberDataGridViewTextBoxColumn.Width = 112;
-            // 
-            // carsBindingSource
-            // 
-            this.carsBindingSource.DataSource = typeof(RentalServiceLib.Cars);
-            // 
             // CarsDataBase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 27F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.ClientSize = new System.Drawing.Size(1022, 633);
+            this.ClientSize = new System.Drawing.Size(1022, 594);
             this.Controls.Add(this.number_textBox);
             this.Controls.Add(this.delete_button);
             this.Controls.Add(this.clearDataBase_button);

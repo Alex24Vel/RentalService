@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Forms
@@ -23,30 +16,24 @@ namespace Forms
             MainForm mainForm = new MainForm();
             mainForm.Show();
         }
-
         private void cars_button_Click(object sender, EventArgs e)
         {
             this.Hide();
             CarsDataBase carsDataBase = new CarsDataBase();
             carsDataBase.Show();
         }
-
         private void trucks_button_Click(object sender, EventArgs e)
         {
             this.Hide();
             TrucksDataBase trucksDataBase = new TrucksDataBase();
             trucksDataBase.Show();
-
         }
-
         private void motocycles_button_Click(object sender, EventArgs e)
         {
             this.Hide();
             MotocyclesDataBase motocyclesDataBase = new MotocyclesDataBase();
             motocyclesDataBase.Show();
-
         }
-
         private void bicycles_button_Click(object sender, EventArgs e)
         {
             this.Hide();

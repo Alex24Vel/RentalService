@@ -374,7 +374,7 @@
             this.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.Name = "MotocyclesDataBase";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "MotocyclesDataBase";
+            this.Text = "Motocycles";
             ((System.ComponentModel.ISupportInitialize)(this.motocycles_dataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.motocyclesBindingSource)).EndInit();
             this.ResumeLayout(false);
