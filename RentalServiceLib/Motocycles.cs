@@ -13,7 +13,7 @@ namespace RentalServiceLib
 
         public string Make { get; set; }
         public string Model { get; set; }
-        public int Year { get; set; }
+        public string Year { get; set; }
         public string PricePerDay { get; set; }
         public string Number { get; set; }
 
@@ -31,7 +31,7 @@ namespace RentalServiceLib
                     Motocycles motocycle = new Motocycles();
                     motocycle.Make = entries[0];
                     motocycle.Model = entries[1];
-                    motocycle.Year = Convert.ToInt32(entries[2]);
+                    motocycle.Year = entries[2];
                     motocycle.PricePerDay = entries[3];
                     motocycle.Number = entries[4];
 

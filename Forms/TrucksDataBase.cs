@@ -65,7 +65,7 @@ namespace Forms
             Trucks truck = new Trucks();
             truck.Make = make_textBox.Text;
             truck.Model = model_textBox.Text;
-            truck.Year = Convert.ToInt32(year_textBox.Text.ToString());
+            truck.Year = year_textBox.Text.ToString();
             truck.PricePerDay = pricePerDay_textBox.Text.ToString();
             truck.TruckType = truckType_textBox.Text;
             truck.Number = number_comboBox.Text.ToString();

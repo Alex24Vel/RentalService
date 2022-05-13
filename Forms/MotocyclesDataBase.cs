@@ -66,7 +66,7 @@ namespace Forms
             Motocycles motocycle = new Motocycles();
             motocycle.Make = make_textBox.Text;
             motocycle.Model = model_textBox.Text;
-            motocycle.Year = Convert.ToInt32(year_textBox.Text.ToString());
+            motocycle.Year = year_textBox.Text.ToString();
             motocycle.PricePerDay = pricePerDay_textBox.Text.ToString();
             motocycle.Number = number_comboBox.Text.ToString();
             Motocycleslist.Add(motocycle);

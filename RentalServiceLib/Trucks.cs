@@ -13,7 +13,7 @@ namespace RentalServiceLib
 
         public string Make { get; set; }
         public string Model { get; set; }
-        public int Year { get; set; }
+        public string Year { get; set; }
         public string PricePerDay { get; set; }
         public string Number { get; set; }
         public string TruckType { get; set; }
@@ -32,7 +32,7 @@ namespace RentalServiceLib
                     Trucks truck = new Trucks();
                     truck.Make = entries[0];
                     truck.Model = entries[1];
-                    truck.Year = Convert.ToInt32(entries[2]);
+                    truck.Year = entries[2];
                     truck.PricePerDay = entries[3];
                     truck.TruckType = entries[4];
                     truck.Number = entries[5];

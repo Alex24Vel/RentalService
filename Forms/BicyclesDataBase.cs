@@ -67,7 +67,7 @@ namespace Forms
             Bicycles bicycle = new Bicycles();
             bicycle.Make = make_textBox.Text;
             bicycle.Model = model_textBox.Text;
-            bicycle.Year = Convert.ToInt32(year_textBox.Text.ToString());
+            bicycle.Year = year_textBox.Text.ToString();
             bicycle.PricePerDay = pricePerDay_textBox.Text.ToString();
             bicycle.Number = number_comboBox.Text.ToString();
             bicycleslist.Add(bicycle);

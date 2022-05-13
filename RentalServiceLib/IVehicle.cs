@@ -10,7 +10,7 @@ namespace RentalServiceLib
     {
         string Make { get; set; }
         string Model { get; set; }
-        int Year { get; set; }
+        string Year { get; set; }
         string PricePerDay { get; set; }
         string Number { get; set; }
 
