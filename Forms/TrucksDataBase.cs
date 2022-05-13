@@ -20,13 +20,8 @@ namespace Forms
             InitializeComponent();
         }
         internal List<Trucks> truckslist = new List<Trucks>();
-        private void TrucksDataBase_Load(object sender, EventArgs e)
-        {
-            Trucks trucks = new Trucks();
-            trucks.getData(truckslist);
-            number_comboBox.DataSource = truckslist;
-        }
         readonly string TrucksPath = @"T:\Microsoft Visual Studio\Projects\Trucks.txt";
+
 
         private void close_button_Click(object sender, EventArgs e)
         {
@@ -34,31 +29,34 @@ namespace Forms
             VehiclesDataBaseForm vehiclesDataBaseForm = new VehiclesDataBaseForm();
             vehiclesDataBaseForm.Show();
         }
-
         private void load_button_Click(object sender, EventArgs e)
         {
+            Trucks trucks = new Trucks();
+            trucks.getData(truckslist);
             trucks_dataGridView.DataSource = truckslist;
-            trucks_dataGridView.Update();
         }
-
         private void clearDataBase_button_Click(object sender, EventArgs e)
         {
-            List<Trucks> tmp = new List<Trucks>();
-            trucks_dataGridView.DataSource = tmp;
-            trucks_dataGridView.Update();
+            truckslist.Clear();
+            trucks_dataGridView.DataSource = truckslist.Distinct();
         }
-
         private void update_button_Click(object sender, EventArgs e)
         {
             clearDataBase_button_Click(sender, e);
             trucks_dataGridView.Update();
             load_button_Click(sender, e);
         }
-
         private void trucksExplorer_Click(object sender, EventArgs e)
         {
             Process.Start(new ProcessStartInfo { FileName = "explorer", Arguments = $"/n,/select,{TrucksPath}" });
         }
+        private void delete_button_Click(object sender, EventArgs e)
+        {
+            List<string> tmp = File.ReadAllLines(TrucksPath).ToList();
+            tmp.RemoveAt(trucks_dataGridView.CurrentCell.RowIndex);
+            File.WriteAllLines(TrucksPath, tmp.ToArray());
+        }
+
 
         private void add_button_Click(object sender, EventArgs e)
         {
@@ -76,7 +74,6 @@ namespace Forms
             using (StreamWriter writer = new StreamWriter(TrucksPath, true))
                 writer.WriteLine(fileStr);
         }
-
         private void clear_button_Click(object sender, EventArgs e)
         {
             make_textBox.Clear();

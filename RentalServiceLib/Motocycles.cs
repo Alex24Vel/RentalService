@@ -23,8 +23,9 @@ namespace RentalServiceLib
         {
             try
             {
-                FileStream reader = new FileStream(motocyclesPath, FileMode.Open, FileAccess.Read);
-                List<string> lines = File.ReadAllLines(motocyclesPath).ToList();
+                List<string> lines;
+                using (FileStream reader = new FileStream(motocyclesPath, FileMode.Open, FileAccess.Read))
+                    lines = File.ReadAllLines(motocyclesPath).ToList();
                 foreach (var line in lines)
                 {
                     string[] entries = line.Split(',');

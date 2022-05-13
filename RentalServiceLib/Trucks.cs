@@ -24,8 +24,9 @@ namespace RentalServiceLib
         {
             try
             {
-                FileStream reader = new FileStream(trucksPath, FileMode.Open, FileAccess.Read);
-                List<string> lines = File.ReadAllLines(trucksPath).ToList();
+                List<string> lines;
+                using (FileStream reader = new FileStream(trucksPath, FileMode.Open, FileAccess.Read))
+                    lines = File.ReadAllLines(trucksPath).ToList();
                 foreach (var line in lines)
                 {
                     string[] entries = line.Split(',');
@@ -36,7 +37,6 @@ namespace RentalServiceLib
                     truck.PricePerDay = entries[3];
                     truck.TruckType = entries[4];
                     truck.Number = entries[5];
-
                     truckslist.Add(truck);
                 }
                 
