@@ -46,7 +46,6 @@
             this.addTruck_label = new System.Windows.Forms.Label();
             this.clear_button = new System.Windows.Forms.Button();
             this.add_button = new System.Windows.Forms.Button();
-            this.number_comboBox = new System.Windows.Forms.ComboBox();
             this.truckType_textBox = new System.Windows.Forms.TextBox();
             this.pricePerDay_textBox = new System.Windows.Forms.TextBox();
             this.year_textBox = new System.Windows.Forms.TextBox();
@@ -58,28 +57,38 @@
             this.year_label = new System.Windows.Forms.Label();
             this.model_label = new System.Windows.Forms.Label();
             this.make_label = new System.Windows.Forms.Label();
+            this.delete_button = new System.Windows.Forms.Button();
+            this.number_textBox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.trucks_dataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trucksBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // close_button
             // 
-            this.close_button.Location = new System.Drawing.Point(950, 566);
+            this.close_button.BackColor = System.Drawing.Color.AliceBlue;
+            this.close_button.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
+            this.close_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.close_button.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.close_button.Location = new System.Drawing.Point(985, 568);
             this.close_button.Name = "close_button";
             this.close_button.Size = new System.Drawing.Size(86, 53);
             this.close_button.TabIndex = 0;
             this.close_button.Text = "Close";
-            this.close_button.UseVisualStyleBackColor = true;
+            this.close_button.UseVisualStyleBackColor = false;
             this.close_button.Click += new System.EventHandler(this.close_button_Click);
             // 
             // load_button
             // 
-            this.load_button.Location = new System.Drawing.Point(220, 537);
+            this.load_button.BackColor = System.Drawing.Color.AliceBlue;
+            this.load_button.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
+            this.load_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.load_button.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.load_button.Location = new System.Drawing.Point(255, 537);
             this.load_button.Name = "load_button";
             this.load_button.Size = new System.Drawing.Size(107, 62);
             this.load_button.TabIndex = 1;
             this.load_button.Text = "Load";
-            this.load_button.UseVisualStyleBackColor = true;
+            this.load_button.UseVisualStyleBackColor = false;
             this.load_button.Click += new System.EventHandler(this.load_button_Click);
             // 
             // trucks_dataGridView
@@ -87,6 +96,7 @@
             this.trucks_dataGridView.AllowUserToAddRows = false;
             this.trucks_dataGridView.AllowUserToDeleteRows = false;
             this.trucks_dataGridView.AutoGenerateColumns = false;
+            this.trucks_dataGridView.BackgroundColor = System.Drawing.Color.GhostWhite;
             this.trucks_dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.trucks_dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.makeDataGridViewTextBoxColumn,
@@ -96,7 +106,8 @@
             this.truckTypeDataGridViewTextBoxColumn,
             this.numberDataGridViewTextBoxColumn});
             this.trucks_dataGridView.DataSource = this.trucksBindingSource;
-            this.trucks_dataGridView.Location = new System.Drawing.Point(220, 43);
+            this.trucks_dataGridView.GridColor = System.Drawing.Color.Orange;
+            this.trucks_dataGridView.Location = new System.Drawing.Point(255, 43);
             this.trucks_dataGridView.Name = "trucks_dataGridView";
             this.trucks_dataGridView.ReadOnly = true;
             this.trucks_dataGridView.RowHeadersWidth = 51;
@@ -164,38 +175,50 @@
             // 
             // clearDataBase_button
             // 
-            this.clearDataBase_button.Location = new System.Drawing.Point(334, 537);
+            this.clearDataBase_button.BackColor = System.Drawing.Color.AliceBlue;
+            this.clearDataBase_button.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
+            this.clearDataBase_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.clearDataBase_button.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.clearDataBase_button.Location = new System.Drawing.Point(368, 537);
             this.clearDataBase_button.Name = "clearDataBase_button";
             this.clearDataBase_button.Size = new System.Drawing.Size(107, 62);
             this.clearDataBase_button.TabIndex = 3;
             this.clearDataBase_button.Text = "Clear";
-            this.clearDataBase_button.UseVisualStyleBackColor = true;
+            this.clearDataBase_button.UseVisualStyleBackColor = false;
             this.clearDataBase_button.Click += new System.EventHandler(this.clearDataBase_button_Click);
             // 
             // update_button
             // 
-            this.update_button.Location = new System.Drawing.Point(447, 537);
+            this.update_button.BackColor = System.Drawing.Color.AliceBlue;
+            this.update_button.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
+            this.update_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.update_button.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.update_button.Location = new System.Drawing.Point(485, 537);
             this.update_button.Name = "update_button";
             this.update_button.Size = new System.Drawing.Size(107, 62);
             this.update_button.TabIndex = 4;
             this.update_button.Text = "Update";
-            this.update_button.UseVisualStyleBackColor = true;
+            this.update_button.UseVisualStyleBackColor = false;
             this.update_button.Click += new System.EventHandler(this.update_button_Click);
             // 
             // trucksExplorer
             // 
-            this.trucksExplorer.Location = new System.Drawing.Point(560, 537);
+            this.trucksExplorer.BackColor = System.Drawing.Color.AliceBlue;
+            this.trucksExplorer.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
+            this.trucksExplorer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.trucksExplorer.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.trucksExplorer.Location = new System.Drawing.Point(598, 537);
             this.trucksExplorer.Name = "trucksExplorer";
             this.trucksExplorer.Size = new System.Drawing.Size(143, 62);
             this.trucksExplorer.TabIndex = 5;
             this.trucksExplorer.Text = "View trucks in explorer";
-            this.trucksExplorer.UseVisualStyleBackColor = true;
+            this.trucksExplorer.UseVisualStyleBackColor = false;
             this.trucksExplorer.Click += new System.EventHandler(this.trucksExplorer_Click);
             // 
             // trucks_label
             // 
             this.trucks_label.AutoSize = true;
-            this.trucks_label.Location = new System.Drawing.Point(215, 13);
+            this.trucks_label.Location = new System.Drawing.Point(250, 13);
             this.trucks_label.Name = "trucks_label";
             this.trucks_label.Size = new System.Drawing.Size(70, 27);
             this.trucks_label.TabIndex = 6;
@@ -212,68 +235,65 @@
             // 
             // clear_button
             // 
+            this.clear_button.BackColor = System.Drawing.Color.AliceBlue;
+            this.clear_button.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
+            this.clear_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.clear_button.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.clear_button.Location = new System.Drawing.Point(109, 505);
             this.clear_button.Name = "clear_button";
             this.clear_button.Size = new System.Drawing.Size(82, 52);
             this.clear_button.TabIndex = 33;
             this.clear_button.Text = "Clear";
-            this.clear_button.UseVisualStyleBackColor = true;
+            this.clear_button.UseVisualStyleBackColor = false;
             this.clear_button.Click += new System.EventHandler(this.clear_button_Click);
             // 
             // add_button
             // 
+            this.add_button.BackColor = System.Drawing.Color.AliceBlue;
+            this.add_button.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
+            this.add_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.add_button.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.add_button.Location = new System.Drawing.Point(17, 505);
             this.add_button.Name = "add_button";
             this.add_button.Size = new System.Drawing.Size(82, 52);
             this.add_button.TabIndex = 32;
             this.add_button.Text = "Add";
-            this.add_button.UseVisualStyleBackColor = true;
+            this.add_button.UseVisualStyleBackColor = false;
             this.add_button.Click += new System.EventHandler(this.add_button_Click);
-            // 
-            // number_comboBox
-            // 
-            this.number_comboBox.DataSource = this.trucksBindingSource;
-            this.number_comboBox.DisplayMember = "Number";
-            this.number_comboBox.FormattingEnabled = true;
-            this.number_comboBox.Location = new System.Drawing.Point(17, 459);
-            this.number_comboBox.Name = "number_comboBox";
-            this.number_comboBox.Size = new System.Drawing.Size(174, 35);
-            this.number_comboBox.TabIndex = 31;
-            this.number_comboBox.ValueMember = "Number";
             // 
             // truckType_textBox
             // 
             this.truckType_textBox.Location = new System.Drawing.Point(17, 383);
             this.truckType_textBox.Name = "truckType_textBox";
-            this.truckType_textBox.Size = new System.Drawing.Size(174, 34);
+            this.truckType_textBox.Size = new System.Drawing.Size(207, 34);
             this.truckType_textBox.TabIndex = 30;
             // 
             // pricePerDay_textBox
             // 
             this.pricePerDay_textBox.Location = new System.Drawing.Point(17, 307);
             this.pricePerDay_textBox.Name = "pricePerDay_textBox";
-            this.pricePerDay_textBox.Size = new System.Drawing.Size(174, 34);
+            this.pricePerDay_textBox.Size = new System.Drawing.Size(207, 34);
             this.pricePerDay_textBox.TabIndex = 29;
             // 
             // year_textBox
             // 
             this.year_textBox.Location = new System.Drawing.Point(17, 231);
             this.year_textBox.Name = "year_textBox";
-            this.year_textBox.Size = new System.Drawing.Size(174, 34);
+            this.year_textBox.Size = new System.Drawing.Size(207, 34);
             this.year_textBox.TabIndex = 28;
             // 
             // model_textBox
             // 
             this.model_textBox.Location = new System.Drawing.Point(17, 155);
             this.model_textBox.Name = "model_textBox";
-            this.model_textBox.Size = new System.Drawing.Size(174, 34);
+            this.model_textBox.Size = new System.Drawing.Size(207, 34);
             this.model_textBox.TabIndex = 27;
             // 
             // make_textBox
             // 
             this.make_textBox.Location = new System.Drawing.Point(17, 79);
             this.make_textBox.Name = "make_textBox";
-            this.make_textBox.Size = new System.Drawing.Size(174, 34);
+            this.make_textBox.Size = new System.Drawing.Size(207, 34);
             this.make_textBox.TabIndex = 26;
             // 
             // number_label
@@ -330,14 +350,38 @@
             this.make_label.TabIndex = 20;
             this.make_label.Text = "Make";
             // 
+            // delete_button
+            // 
+            this.delete_button.BackColor = System.Drawing.Color.AliceBlue;
+            this.delete_button.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
+            this.delete_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.delete_button.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.delete_button.ForeColor = System.Drawing.Color.Black;
+            this.delete_button.Location = new System.Drawing.Point(747, 537);
+            this.delete_button.Name = "delete_button";
+            this.delete_button.Size = new System.Drawing.Size(118, 62);
+            this.delete_button.TabIndex = 34;
+            this.delete_button.Text = "Delete selected row";
+            this.delete_button.UseVisualStyleBackColor = false;
+            this.delete_button.Click += new System.EventHandler(this.delete_button_Click);
+            // 
+            // number_textBox
+            // 
+            this.number_textBox.Location = new System.Drawing.Point(17, 459);
+            this.number_textBox.Name = "number_textBox";
+            this.number_textBox.Size = new System.Drawing.Size(207, 34);
+            this.number_textBox.TabIndex = 35;
+            // 
             // TrucksDataBase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 27F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1048, 631);
+            this.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.ClientSize = new System.Drawing.Size(1083, 633);
+            this.Controls.Add(this.number_textBox);
+            this.Controls.Add(this.delete_button);
             this.Controls.Add(this.clear_button);
             this.Controls.Add(this.add_button);
-            this.Controls.Add(this.number_comboBox);
             this.Controls.Add(this.truckType_textBox);
             this.Controls.Add(this.pricePerDay_textBox);
             this.Controls.Add(this.year_textBox);
@@ -361,8 +405,7 @@
             this.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.Name = "TrucksDataBase";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "TrucksDataBase";
-            this.Load += new System.EventHandler(this.TrucksDataBase_Load);
+            this.Text = "Trucks";
             ((System.ComponentModel.ISupportInitialize)(this.trucks_dataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trucksBindingSource)).EndInit();
             this.ResumeLayout(false);
@@ -389,7 +432,6 @@
         private System.Windows.Forms.Label addTruck_label;
         private System.Windows.Forms.Button clear_button;
         private System.Windows.Forms.Button add_button;
-        private System.Windows.Forms.ComboBox number_comboBox;
         private System.Windows.Forms.TextBox truckType_textBox;
         private System.Windows.Forms.TextBox pricePerDay_textBox;
         private System.Windows.Forms.TextBox year_textBox;
@@ -401,5 +443,7 @@
         private System.Windows.Forms.Label year_label;
         private System.Windows.Forms.Label model_label;
         private System.Windows.Forms.Label make_label;
+        private System.Windows.Forms.Button delete_button;
+        private System.Windows.Forms.TextBox number_textBox;
     }
 }

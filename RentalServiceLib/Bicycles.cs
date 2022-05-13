@@ -13,7 +13,7 @@ namespace RentalServiceLib
 
         public string Make { get; set; }
         public string Model { get; set; }
-        public int Year { get; set; }
+        public string Year { get; set; }
         public string PricePerDay { get; set; }
         public string Number { get; set; }
 
@@ -23,15 +23,16 @@ namespace RentalServiceLib
         {
             try
             {
-                FileStream reader = new FileStream(bicyclesPath, FileMode.Open, FileAccess.Read);
-                List<string> lines = File.ReadAllLines(bicyclesPath).ToList();
+                List<string> lines;
+                using (FileStream reader = new FileStream(bicyclesPath, FileMode.Open, FileAccess.Read))
+                    lines = File.ReadAllLines(bicyclesPath).ToList();
                 foreach (var line in lines)
                 {
                     string[] entries = line.Split(',');
                     Bicycles bicycle = new Bicycles();
                     bicycle.Make = entries[0];
                     bicycle.Model = entries[1];
-                    bicycle.Year = Convert.ToInt32(entries[2]);
+                    bicycle.Year = entries[2];
                     bicycle.PricePerDay = entries[3];
                     bicycle.Number = entries[4];
 
