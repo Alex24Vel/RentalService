@@ -66,7 +66,7 @@
             this.close_button.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
             this.close_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.close_button.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.close_button.Location = new System.Drawing.Point(758, 553);
+            this.close_button.Location = new System.Drawing.Point(734, 527);
             this.close_button.Name = "close_button";
             this.close_button.Size = new System.Drawing.Size(85, 48);
             this.close_button.TabIndex = 0;
@@ -80,7 +80,7 @@
             this.load_button.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
             this.load_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.load_button.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.load_button.Location = new System.Drawing.Point(248, 488);
+            this.load_button.Location = new System.Drawing.Point(234, 448);
             this.load_button.Name = "load_button";
             this.load_button.Size = new System.Drawing.Size(95, 59);
             this.load_button.TabIndex = 1;
@@ -103,12 +103,12 @@
             this.numberDataGridViewTextBoxColumn});
             this.motocycles_dataGridView.DataSource = this.motocyclesBindingSource;
             this.motocycles_dataGridView.GridColor = System.Drawing.Color.Orange;
-            this.motocycles_dataGridView.Location = new System.Drawing.Point(248, 52);
+            this.motocycles_dataGridView.Location = new System.Drawing.Point(234, 52);
             this.motocycles_dataGridView.Name = "motocycles_dataGridView";
             this.motocycles_dataGridView.ReadOnly = true;
             this.motocycles_dataGridView.RowHeadersWidth = 51;
             this.motocycles_dataGridView.RowTemplate.Height = 24;
-            this.motocycles_dataGridView.Size = new System.Drawing.Size(588, 430);
+            this.motocycles_dataGridView.Size = new System.Drawing.Size(588, 391);
             this.motocycles_dataGridView.TabIndex = 2;
             // 
             // makeDataGridViewTextBoxColumn
@@ -166,7 +166,7 @@
             this.motocyclesExplorer.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
             this.motocyclesExplorer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.motocyclesExplorer.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.motocyclesExplorer.Location = new System.Drawing.Point(548, 488);
+            this.motocyclesExplorer.Location = new System.Drawing.Point(534, 448);
             this.motocyclesExplorer.Name = "motocyclesExplorer";
             this.motocyclesExplorer.Size = new System.Drawing.Size(150, 59);
             this.motocyclesExplorer.TabIndex = 8;
@@ -180,7 +180,7 @@
             this.update_button.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
             this.update_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.update_button.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.update_button.Location = new System.Drawing.Point(447, 488);
+            this.update_button.Location = new System.Drawing.Point(433, 448);
             this.update_button.Name = "update_button";
             this.update_button.Size = new System.Drawing.Size(95, 59);
             this.update_button.TabIndex = 7;
@@ -194,7 +194,7 @@
             this.clearDataBase_button.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
             this.clearDataBase_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.clearDataBase_button.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.clearDataBase_button.Location = new System.Drawing.Point(349, 488);
+            this.clearDataBase_button.Location = new System.Drawing.Point(335, 448);
             this.clearDataBase_button.Name = "clearDataBase_button";
             this.clearDataBase_button.Size = new System.Drawing.Size(92, 59);
             this.clearDataBase_button.TabIndex = 6;
@@ -208,7 +208,7 @@
             this.clear_button.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
             this.clear_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.clear_button.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.clear_button.Location = new System.Drawing.Point(121, 448);
+            this.clear_button.Location = new System.Drawing.Point(121, 442);
             this.clear_button.Name = "clear_button";
             this.clear_button.Size = new System.Drawing.Size(82, 52);
             this.clear_button.TabIndex = 48;
@@ -222,7 +222,7 @@
             this.add_button.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
             this.add_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.add_button.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.add_button.Location = new System.Drawing.Point(17, 448);
+            this.add_button.Location = new System.Drawing.Point(17, 442);
             this.add_button.Name = "add_button";
             this.add_button.Size = new System.Drawing.Size(82, 52);
             this.add_button.TabIndex = 47;
@@ -315,7 +315,7 @@
             // motocycles_label
             // 
             this.motocycles_label.AutoSize = true;
-            this.motocycles_label.Location = new System.Drawing.Point(243, 13);
+            this.motocycles_label.Location = new System.Drawing.Point(229, 13);
             this.motocycles_label.Name = "motocycles_label";
             this.motocycles_label.Size = new System.Drawing.Size(115, 27);
             this.motocycles_label.TabIndex = 49;
@@ -328,7 +328,7 @@
             this.delete_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.delete_button.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.delete_button.ForeColor = System.Drawing.Color.Black;
-            this.delete_button.Location = new System.Drawing.Point(704, 488);
+            this.delete_button.Location = new System.Drawing.Point(690, 448);
             this.delete_button.Name = "delete_button";
             this.delete_button.Size = new System.Drawing.Size(118, 59);
             this.delete_button.TabIndex = 50;
@@ -348,7 +348,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 27F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.ClientSize = new System.Drawing.Size(855, 612);
+            this.ClientSize = new System.Drawing.Size(831, 587);
             this.Controls.Add(this.number_textBox);
             this.Controls.Add(this.delete_button);
             this.Controls.Add(this.motocycles_label);
