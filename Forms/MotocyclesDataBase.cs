@@ -52,20 +52,26 @@ namespace Forms
 
         private void Add_button_Click(object sender, EventArgs e)
         {
-            Motocycles motocycle = new Motocycles
+            if (make_textBox.TextLength <= 1 || model_textBox.TextLength <= 1 || year_textBox.TextLength <= 1 ||
+                pricePerDay_textBox.TextLength <= 1 || year_textBox.TextLength <= 1 || number_textBox.TextLength <= 1)
+                MessageBox.Show("Fill in all fields!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            else
             {
-                Make = make_textBox.Text,
-                Model = model_textBox.Text,
-                Year = year_textBox.Text,
-                PricePerDay = pricePerDay_textBox.Text,
-                Number = number_textBox.Text
-            };
-            Motocycleslist.Add(motocycle);
+                Motocycles motocycle = new Motocycles
+                {
+                    Make = make_textBox.Text,
+                    Model = model_textBox.Text,
+                    Year = year_textBox.Text,
+                    PricePerDay = pricePerDay_textBox.Text,
+                    Number = number_textBox.Text
+                };
+                Motocycleslist.Add(motocycle);
 
-            string fileStr = $"{motocycle.Make},{motocycle.Model},{motocycle.Year}," +
-                $"{motocycle.PricePerDay},{motocycle.Number}";
-            using (StreamWriter writer = new StreamWriter(Motocycles.motocyclesPath, true))
-                writer.WriteLine(fileStr);
+                string fileStr = $"{motocycle.Make},{motocycle.Model},{motocycle.Year}," +
+                    $"{motocycle.PricePerDay},{motocycle.Number}";
+                using (StreamWriter writer = new StreamWriter(Motocycles.motocyclesPath, true))
+                    writer.WriteLine(fileStr);
+            }
         }
         private void Clear_button_Click(object sender, EventArgs e)
         {

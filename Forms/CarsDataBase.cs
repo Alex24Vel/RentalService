@@ -54,21 +54,28 @@ namespace Forms
 
         private void Add_button_Click(object sender, EventArgs e)
         {
-            Cars car = new Cars
+            if (make_textBox.TextLength <= 1 || model_textBox.TextLength <= 1 || year_textBox.TextLength <= 1 ||
+                pricePerDay_textBox.TextLength <= 1 || year_textBox.TextLength <= 1 || number_textBox.TextLength <= 1
+                || carType_textBox.TextLength <=1)
+                MessageBox.Show("Fill in all fields!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            else
             {
-                Make = make_textBox.Text,
-                Model = model_textBox.Text,
-                Year = year_textBox.Text.ToString(),
-                PricePerDay = pricePerDay_textBox.Text.ToString(),
-                CarType = carType_textBox.Text,
-                Number = number_textBox.Text
-            };
-            Carslist.Add(car);
+                Cars car = new Cars
+                {
+                    Make = make_textBox.Text,
+                    Model = model_textBox.Text,
+                    Year = year_textBox.Text.ToString(),
+                    PricePerDay = pricePerDay_textBox.Text.ToString(),
+                    CarType = carType_textBox.Text,
+                    Number = number_textBox.Text
+                };
+                Carslist.Add(car);
 
-            string fileStr = $"{car.Make},{car.Model},{car.Year}," +
-                $"{car.PricePerDay},{car.CarType},{car.Number}";
-            using (StreamWriter writer = new StreamWriter(Cars.carsPath, true))
-                writer.WriteLine(fileStr);
+                string fileStr = $"{car.Make},{car.Model},{car.Year}," +
+                    $"{car.PricePerDay},{car.CarType},{car.Number}";
+                using (StreamWriter writer = new StreamWriter(Cars.carsPath, true))
+                    writer.WriteLine(fileStr);
+            }
         }
         private void Clear_button_Click(object sender, EventArgs e)
         {

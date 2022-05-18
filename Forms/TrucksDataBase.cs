@@ -54,21 +54,28 @@ namespace Forms
 
         private void Add_button_Click(object sender, EventArgs e)
         {
-            Trucks truck = new Trucks
+            if (make_textBox.TextLength <= 1 || model_textBox.TextLength <= 1 || year_textBox.TextLength <= 1 ||
+                pricePerDay_textBox.TextLength <= 1 || year_textBox.TextLength <= 1 || number_textBox.TextLength <= 1
+                || truckType_textBox.TextLength <= 1)
+                MessageBox.Show("Fill in all fields!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            else
             {
-                Make = make_textBox.Text,
-                Model = model_textBox.Text,
-                Year = year_textBox.Text,
-                PricePerDay = pricePerDay_textBox.Text,
-                TruckType = truckType_textBox.Text,
-                Number = number_textBox.Text
-            };
-            truckslist.Add(truck);
+                Trucks truck = new Trucks
+                {
+                    Make = make_textBox.Text,
+                    Model = model_textBox.Text,
+                    Year = year_textBox.Text,
+                    PricePerDay = pricePerDay_textBox.Text,
+                    TruckType = truckType_textBox.Text,
+                    Number = number_textBox.Text
+                };
+                truckslist.Add(truck);
 
-            string fileStr = $"{truck.Make},{truck.Model},{truck.Year}," +
-                $"{truck.PricePerDay},{truck.TruckType},{truck.Number}";
-            using (StreamWriter writer = new StreamWriter(Trucks.trucksPath, true))
-                writer.WriteLine(fileStr);
+                string fileStr = $"{truck.Make},{truck.Model},{truck.Year}," +
+                    $"{truck.PricePerDay},{truck.TruckType},{truck.Number}";
+                using (StreamWriter writer = new StreamWriter(Trucks.trucksPath, true))
+                    writer.WriteLine(fileStr);
+            }
         }
         private void Clear_button_Click(object sender, EventArgs e)
         {

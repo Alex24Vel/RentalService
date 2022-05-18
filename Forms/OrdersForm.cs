@@ -25,12 +25,14 @@ namespace Forms
                 MessageBox.Show("Fill in all fields!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             else
             {
-                Orders order = new Orders();
-                order.Renter = renter_textBox.Text;
-                order.Vehicle = vehicles_comboBox.Text;
-                order.VehicleNumber = vehicleNumbers_comboBox.Text;
-                order.RentDate = rentDate_textBox.Text.ToString();
-                order.DueDate = dueDate_textBox.Text.ToString();
+                Orders order = new Orders
+                {
+                    Renter = renter_textBox.Text,
+                    Vehicle = vehicles_comboBox.Text,
+                    VehicleNumber = vehicleNumbers_comboBox.Text,
+                    RentDate = rentDate_textBox.Text.ToString(),
+                    DueDate = dueDate_textBox.Text.ToString()
+                };
                 ordersList.Add(order);
 
                 string fileStr = $"{order.Renter},{order.Vehicle},{order.VehicleNumber}," +
