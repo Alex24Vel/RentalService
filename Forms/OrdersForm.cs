@@ -1,19 +1,11 @@
 ﻿using System;
 using System.IO;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using RentalServiceLib;
 using System.Diagnostics;
-
-/* 
- * todo Bug_1:  [vehicles_comboBox_SelectedIndexChanged] shows used numbers after all free were also used *hard to fix*
-*/
 
 namespace Forms
 {
@@ -26,9 +18,8 @@ namespace Forms
 
         internal List<Orders> ordersList = new List<Orders>();
         internal List<VehicleNumbers> numsList = new List<VehicleNumbers>();
-        readonly string ordersPath = @"T:\Microsoft Visual Studio\Projects\Orders.txt";
 
-        private void add_button_Click(object sender, EventArgs e)
+        private void Add_button_Click(object sender, EventArgs e)
         {
             if (renter_textBox.TextLength <= 1 || rentDate_textBox.TextLength <= 1 || dueDate_textBox.TextLength <= 1)
                 MessageBox.Show("Fill in all fields!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -44,11 +35,11 @@ namespace Forms
 
                 string fileStr = $"{order.Renter},{order.Vehicle},{order.VehicleNumber}," +
                     $"{order.RentDate},{order.DueDate}";
-                using (StreamWriter writer = new StreamWriter(ordersPath, true))
+                using (StreamWriter writer = new StreamWriter(Orders.ordersPath, true))
                     writer.WriteLine(fileStr);
             }
         }
-        private void clear_button_Click(object sender, EventArgs e)
+        private void Clear_button_Click(object sender, EventArgs e)
         {
             renter_textBox.Clear();
             vehicles_comboBox.ResetText();
@@ -60,7 +51,7 @@ namespace Forms
             rentDate_textBox.Clear();
             dueDate_textBox.Clear();
         }
-        private void vehicles_comboBox_SelectedIndexChanged(object sender, EventArgs e)
+        private void Vehicles_comboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             VehicleNumbers numbers = new VehicleNumbers();
             numbers.ReadNumbers(numsList);
@@ -68,7 +59,7 @@ namespace Forms
 
             List<Orders> tmp = new List<Orders>();
             Orders orders = new Orders();
-            orders.getData(tmp);
+            orders.GetData(tmp);
             try
             {
                 for (int i = 0; i < numsList.Count; i++)
@@ -80,45 +71,45 @@ namespace Forms
             finally { vehicleNumbers_comboBox.DataSource = numsList; }
         }
 
-        private void showBy_comboBox_SelectedIndexChanged(object sender, EventArgs e)
+        private void ShowBy_comboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             List<Orders> tmpSource = new List<Orders>();
             Orders tmp = new Orders();
-            tmp.getData(tmpSource);
+            tmp.GetData(tmpSource);
             tmpSource = tmpSource.Where(x => x.Vehicle == showBy_comboBox.Text).ToList();
             orders_dataGridView.DataSource = tmpSource;
         }
 
-        private void load_button_Click(object sender, EventArgs e)
+        private void Load_button_Click(object sender, EventArgs e)
         {
             Orders orders = new Orders();
-            orders.getData(ordersList);
+            orders.GetData(ordersList);
             orders_dataGridView.DataSource = ordersList;
         }
-        private void clearDataBase_button_Click(object sender, EventArgs e)
+        private void ClearDataBase_button_Click(object sender, EventArgs e)
         {
             ordersList.Clear();
             showBy_comboBox.ResetText();
             orders_dataGridView.DataSource = ordersList.Distinct();
         }
-        private void update_button_Click(object sender, EventArgs e)
+        private void Update_button_Click(object sender, EventArgs e)
         {
-            clearDataBase_button_Click(sender, e);
+            ClearDataBase_button_Click(sender, e);
             orders_dataGridView.Update();
-            load_button_Click(sender, e);
+            Load_button_Click(sender, e);
         }
-        private void ordersExplorer_button_Click(object sender, EventArgs e)
+        private void OrdersExplorer_button_Click(object sender, EventArgs e)
         {
-            Process.Start(new ProcessStartInfo { FileName = "explorer", Arguments = $"/n,/select,{ordersPath}" });
+            Process.Start(new ProcessStartInfo { FileName = "explorer", Arguments = $"/n,/select,{Orders.ordersPath}" });
         }
-        private void delete_button_Click(object sender, EventArgs e)
+        private void Delete_button_Click(object sender, EventArgs e)
         {
-            List<string> tmp = File.ReadAllLines(ordersPath).ToList();
+            List<string> tmp = File.ReadAllLines(Orders.ordersPath).ToList();
             tmp.RemoveAt(orders_dataGridView.CurrentCell.RowIndex);
-            File.WriteAllLines(ordersPath, tmp.ToArray());
+            File.WriteAllLines(Orders.ordersPath, tmp.ToArray());
         }
 
-        private void cancel_button_Click(object sender, EventArgs e)
+        private void Cancel_button_Click(object sender, EventArgs e)
         {
             this.Close();
             MainForm mainForm = new MainForm();

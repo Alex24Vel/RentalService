@@ -44,7 +44,7 @@
             this.exitMain_button.TabIndex = 0;
             this.exitMain_button.Text = "Cancel";
             this.exitMain_button.UseVisualStyleBackColor = false;
-            this.exitMain_button.Click += new System.EventHandler(this.exitMain_button_Click);
+            this.exitMain_button.Click += new System.EventHandler(this.ExitMain_button_Click);
             // 
             // database_button
             // 
@@ -57,7 +57,7 @@
             this.database_button.TabIndex = 4;
             this.database_button.Text = "Vehicles database";
             this.database_button.UseVisualStyleBackColor = false;
-            this.database_button.Click += new System.EventHandler(this.database_button_Click);
+            this.database_button.Click += new System.EventHandler(this.Database_button_Click);
             // 
             // orders_button
             // 
@@ -70,7 +70,7 @@
             this.orders_button.TabIndex = 5;
             this.orders_button.Text = "View current rental orders";
             this.orders_button.UseVisualStyleBackColor = false;
-            this.orders_button.Click += new System.EventHandler(this.orders_button_Click);
+            this.orders_button.Click += new System.EventHandler(this.Orders_button_Click);
             // 
             // MainForm
             // 

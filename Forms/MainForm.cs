@@ -10,19 +10,19 @@ namespace Forms
             InitializeComponent();
         }
 
-        private void exitMain_button_Click(object sender, EventArgs e)
+        private void ExitMain_button_Click(object sender, EventArgs e)
         {
             this.Close();
             LoginForm loginForm = new LoginForm();
             loginForm.Show();
         }
-        private void orders_button_Click(object sender, EventArgs e)
+        private void Orders_button_Click(object sender, EventArgs e)
         {
             this.Hide();
             OrdersForm ordersForm = new OrdersForm();
             ordersForm.Show();
         }
-        private void database_button_Click(object sender, EventArgs e)
+        private void Database_button_Click(object sender, EventArgs e)
         {
             this.Hide();
             VehiclesDataBaseForm dataBaseForm = new VehiclesDataBaseForm();

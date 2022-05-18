@@ -15,45 +15,44 @@ namespace Forms
             InitializeComponent();
         }
         internal List<Cars> Carslist = new List<Cars>();
-        readonly string carsPath = @"T:\Microsoft Visual Studio\Projects\Cars.txt";
+        
 
-
-        private void close_button_Click(object sender, EventArgs e)
+        private void Close_button_Click(object sender, EventArgs e)
         {
             this.Close();
             VehiclesDataBaseForm vehiclesDataBaseForm = new VehiclesDataBaseForm();
             vehiclesDataBaseForm.Show();
         }
-        private void load_button_Click(object sender, EventArgs e)
+        private void Load_button_Click(object sender, EventArgs e)
         {
             Cars cars = new Cars();
-            cars.getData(Carslist);
+            cars.GetData(Carslist);
             cars_dataGridView.DataSource = Carslist;
         }
-        private void clearDataBase_button_Click(object sender, EventArgs e)
+        private void ClearDataBase_button_Click(object sender, EventArgs e)
         {
             Carslist.Clear();
             cars_dataGridView.DataSource = Carslist.Distinct();
         }
-        private void update_button_Click(object sender, EventArgs e)
+        private void Update_button_Click(object sender, EventArgs e)
         {
-            clearDataBase_button_Click(sender, e);
+            ClearDataBase_button_Click(sender, e);
             cars_dataGridView.Update();
-            load_button_Click(sender, e);
+            Load_button_Click(sender, e);
         }
-        private void carsExplorer_Click(object sender, EventArgs e)
+        private void CarsExplorer_Click(object sender, EventArgs e)
         {
-            Process.Start(new ProcessStartInfo { FileName = "explorer", Arguments = $"/n,/select,{carsPath}" });
+            Process.Start(new ProcessStartInfo { FileName = "explorer", Arguments = $"/n,/select,{Cars.carsPath}" });
         }
-        private void delete_button_Click(object sender, EventArgs e)
+        private void Delete_button_Click(object sender, EventArgs e)
         {
-            List<string> tmp = File.ReadAllLines(carsPath).ToList();
+            List<string> tmp = File.ReadAllLines(Cars.carsPath).ToList();
             tmp.RemoveAt(cars_dataGridView.CurrentCell.RowIndex);
-            File.WriteAllLines(carsPath, tmp.ToArray());
+            File.WriteAllLines(Cars.carsPath, tmp.ToArray());
         }
 
 
-        private void add_button_Click(object sender, EventArgs e)
+        private void Add_button_Click(object sender, EventArgs e)
         {
             Cars car = new Cars
             {
@@ -68,10 +67,10 @@ namespace Forms
 
             string fileStr = $"{car.Make},{car.Model},{car.Year}," +
                 $"{car.PricePerDay},{car.CarType},{car.Number}";
-            using (StreamWriter writer = new StreamWriter(carsPath, true))
+            using (StreamWriter writer = new StreamWriter(Cars.carsPath, true))
                 writer.WriteLine(fileStr);
         }
-        private void clear_button_Click(object sender, EventArgs e)
+        private void Clear_button_Click(object sender, EventArgs e)
         {
             make_textBox.Clear();
             model_textBox.Clear();

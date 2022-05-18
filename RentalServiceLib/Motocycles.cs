@@ -2,14 +2,12 @@
 using System.IO;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace RentalServiceLib
 {
     public class Motocycles : IVehicle
     {
-        public string motocyclesPath = @"T:\Microsoft Visual Studio\Projects\Motocycles.txt";
+        public static readonly string motocyclesPath = @"T:\Microsoft Visual Studio\Projects\Motocycles.txt";
 
         public string Make { get; set; }
         public string Model { get; set; }
@@ -18,8 +16,7 @@ namespace RentalServiceLib
         public string Number { get; set; }
 
         public List<Motocycles> motocycleslist = new List<Motocycles>();
-
-        public void getData(List<Motocycles> motocycleslist)
+        public void GetData(List<Motocycles> motocycleslist)
         {
             try
             {
@@ -56,7 +53,8 @@ namespace RentalServiceLib
             }
 
         }
-        public void showData()
+        
+        /*public void showData()
         {
             foreach (var motocycle in motocycleslist)
             {
@@ -64,6 +62,6 @@ namespace RentalServiceLib
                     $"Price per day: {motocycle.PricePerDay} Number: {motocycle.Number}");
             }
 
-        }
+        }*/
     }
 }

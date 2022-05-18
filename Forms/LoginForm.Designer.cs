@@ -66,7 +66,7 @@
             this.clear_button.TabIndex = 5;
             this.clear_button.Text = "Clear";
             this.clear_button.UseVisualStyleBackColor = false;
-            this.clear_button.Click += new System.EventHandler(this.clear_button_Click);
+            this.clear_button.Click += new System.EventHandler(this.Clear_button_Click);
             // 
             // login_button
             // 
@@ -79,7 +79,7 @@
             this.login_button.TabIndex = 4;
             this.login_button.Text = "Login";
             this.login_button.UseVisualStyleBackColor = false;
-            this.login_button.Click += new System.EventHandler(this.login_button_Click);
+            this.login_button.Click += new System.EventHandler(this.Login_button_Click);
             // 
             // password_textBox
             // 
@@ -88,7 +88,7 @@
             this.password_textBox.PasswordChar = '*';
             this.password_textBox.Size = new System.Drawing.Size(187, 33);
             this.password_textBox.TabIndex = 3;
-            this.password_textBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.password_textBox_KeyDown);
+            this.password_textBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Password_textBox_KeyDown);
             // 
             // username_textBox
             // 
@@ -96,7 +96,7 @@
             this.username_textBox.Name = "username_textBox";
             this.username_textBox.Size = new System.Drawing.Size(187, 33);
             this.username_textBox.TabIndex = 2;
-            this.username_textBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.username_textBox_KeyDown);
+            this.username_textBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Username_textBox_KeyDown);
             // 
             // password_label
             // 
@@ -127,7 +127,7 @@
             this.exit_button.TabIndex = 5;
             this.exit_button.Text = "Exit";
             this.exit_button.UseVisualStyleBackColor = false;
-            this.exit_button.Click += new System.EventHandler(this.exit_button_Click);
+            this.exit_button.Click += new System.EventHandler(this.Exit_button_Click);
             // 
             // message_textBox
             // 

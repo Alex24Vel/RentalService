@@ -1,15 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.IO;
 
 namespace RentalServiceLib
 {
     public class Trucks : IVehicle
     {
-        public string trucksPath = @"T:\Microsoft Visual Studio\Projects\Trucks.txt";
+        public static readonly string trucksPath = @"T:\Microsoft Visual Studio\Projects\Trucks.txt";
 
         public string Make { get; set; }
         public string Model { get; set; }
@@ -20,7 +18,7 @@ namespace RentalServiceLib
 
 
         public List<Trucks> truckslist = new List<Trucks>();
-        public void getData(List<Trucks> truckslist)
+        public void GetData(List<Trucks> truckslist)
         {
             try
             {
@@ -58,14 +56,15 @@ namespace RentalServiceLib
             }
 
         }
-        public void showData()
+
+        /*public void showData()
         {
             foreach (var truck in truckslist)
             {
                 Console.WriteLine($"Make: {truck.Make} Model: {truck.Model} Year: {truck.Year} " +
                     $"Price per day: {truck.PricePerDay} Truck type: {truck.TruckType} Number: {truck.Number}");
             }
-        }
+        }*/
     }
 
 }

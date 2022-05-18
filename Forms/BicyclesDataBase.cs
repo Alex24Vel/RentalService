@@ -15,44 +15,43 @@ namespace Forms
             InitializeComponent();
         }
         internal List<Bicycles> bicycleslist = new List<Bicycles>();
-        readonly public string bicyclesPath = @"T:\Microsoft Visual Studio\Projects\Bicycles.txt";
 
-        private void close_button_Click(object sender, EventArgs e)
+        private void Close_button_Click(object sender, EventArgs e)
         {
             this.Close();
             VehiclesDataBaseForm vehiclesDataBaseForm = new VehiclesDataBaseForm();
             vehiclesDataBaseForm.Show();
         }
-        private void load_button_Click(object sender, EventArgs e)
+        private void Load_button_Click(object sender, EventArgs e)
         {
             Bicycles bicycles = new Bicycles();
-            bicycles.getData(bicycleslist);
+            bicycles.GetData(bicycleslist);
             bicycles_dataGridView.DataSource = bicycleslist;
         }
-        private void clearDataBase_button_Click(object sender, EventArgs e)
+        private void ClearDataBase_button_Click(object sender, EventArgs e)
         {
             bicycleslist.Clear();
             bicycles_dataGridView.DataSource = bicycleslist.Distinct();
         }
-        private void update_button_Click(object sender, EventArgs e)
+        private void Update_button_Click(object sender, EventArgs e)
         {
-            clearDataBase_button_Click(sender, e);
+            ClearDataBase_button_Click(sender, e);
             bicycles_dataGridView.Update();
-            load_button_Click(sender, e);
+            Load_button_Click(sender, e);
         }
-        private void bicyclesExplorer_Click(object sender, EventArgs e)
+        private void BicyclesExplorer_Click(object sender, EventArgs e)
         {
-            Process.Start(new ProcessStartInfo { FileName = "explorer", Arguments = $"/n,/select,{bicyclesPath}" });
+            Process.Start(new ProcessStartInfo { FileName = "explorer", Arguments = $"/n,/select,{Bicycles.bicyclesPath}" });
         }
-        private void delete_button_Click(object sender, EventArgs e)
+        private void Delete_button_Click(object sender, EventArgs e)
         {
-            List<string> tmp = File.ReadAllLines(bicyclesPath).ToList();
+            List<string> tmp = File.ReadAllLines(Bicycles.bicyclesPath).ToList();
             tmp.RemoveAt(bicycles_dataGridView.CurrentCell.RowIndex);
-            File.WriteAllLines(bicyclesPath, tmp.ToArray());
+            File.WriteAllLines(Bicycles.bicyclesPath, tmp.ToArray());
         }
 
 
-        private void add_button_Click(object sender, EventArgs e)
+        private void Add_button_Click(object sender, EventArgs e)
         {
             Bicycles bicycle = new Bicycles
             {
@@ -66,10 +65,10 @@ namespace Forms
 
             string fileStr = $"{bicycle.Make},{bicycle.Model},{bicycle.Year}," +
                 $"{bicycle.PricePerDay},{bicycle.Number}";
-            using (StreamWriter writer = new StreamWriter(bicyclesPath, true))
+            using (StreamWriter writer = new StreamWriter(Bicycles.bicyclesPath, true))
                 writer.WriteLine(fileStr);
         }
-        private void clear_button_Click(object sender, EventArgs e)
+        private void Clear_button_Click(object sender, EventArgs e)
         {
             make_textBox.Clear();
             model_textBox.Clear();

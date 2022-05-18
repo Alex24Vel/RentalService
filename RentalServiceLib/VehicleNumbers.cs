@@ -12,22 +12,18 @@ namespace RentalServiceLib
         public string Number { get; set; }
 
         public List<VehicleNumbers> numbersList;
-        readonly string carsPath = @"T:\Microsoft Visual Studio\Projects\Cars.txt";
-        readonly string trucksPath = @"T:\Microsoft Visual Studio\Projects\Trucks.txt";
-        readonly string motocyclesPath = @"T:\Microsoft Visual Studio\Projects\Motocycles.txt";
-        readonly string bicyclesPath = @"T:\Microsoft Visual Studio\Projects\Bicycles.txt";
 
         public void ReadNumbers(List<VehicleNumbers> numbersList)
         {
             List<string> carlines, trucklines, motocyclelines, bicyclelines;
-            using (FileStream carreader = new FileStream(carsPath, FileMode.Open, FileAccess.Read))
-                carlines = File.ReadAllLines(carsPath).ToList();
-            using (FileStream truckreader = new FileStream(trucksPath, FileMode.Open, FileAccess.Read))
-                trucklines = File.ReadAllLines(trucksPath).ToList();
-            using (FileStream motocyclereader = new FileStream(motocyclesPath, FileMode.Open, FileAccess.Read))
-                motocyclelines = File.ReadAllLines(motocyclesPath).ToList();
-            using (FileStream bicyclereader = new FileStream(bicyclesPath, FileMode.Open, FileAccess.Read))
-                bicyclelines = File.ReadAllLines(bicyclesPath).ToList();
+            using (FileStream carreader = new FileStream(Cars.carsPath, FileMode.Open, FileAccess.Read))
+                carlines = File.ReadAllLines(Cars.carsPath).ToList();
+            using (FileStream truckreader = new FileStream(Trucks.trucksPath, FileMode.Open, FileAccess.Read))
+                trucklines = File.ReadAllLines(Trucks.trucksPath).ToList();
+            using (FileStream motocyclereader = new FileStream(Motocycles.motocyclesPath, FileMode.Open, FileAccess.Read))
+                motocyclelines = File.ReadAllLines(Motocycles.motocyclesPath).ToList();
+            using (FileStream bicyclereader = new FileStream(Bicycles.bicyclesPath, FileMode.Open, FileAccess.Read))
+                bicyclelines = File.ReadAllLines(Bicycles.bicyclesPath).ToList();
 
             foreach (var line in carlines)
             {
@@ -60,10 +56,10 @@ namespace RentalServiceLib
         }
         
 
-        public void ShowNumbers()
+        /*public void ShowNumbers()
         {
             foreach (var number in numbersList)
                 Console.WriteLine($"Number: {number.Number}");
-        }
+        }*/
     }
 }

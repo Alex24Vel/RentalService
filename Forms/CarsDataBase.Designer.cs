@@ -68,13 +68,13 @@
             this.close_button.BackColor = System.Drawing.Color.AliceBlue;
             this.close_button.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
             this.close_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.close_button.Location = new System.Drawing.Point(925, 524);
+            this.close_button.Location = new System.Drawing.Point(909, 530);
             this.close_button.Name = "close_button";
             this.close_button.Size = new System.Drawing.Size(85, 52);
             this.close_button.TabIndex = 0;
             this.close_button.Text = "Close";
             this.close_button.UseVisualStyleBackColor = false;
-            this.close_button.Click += new System.EventHandler(this.close_button_Click);
+            this.close_button.Click += new System.EventHandler(this.Close_button_Click);
             // 
             // load_button
             // 
@@ -88,7 +88,7 @@
             this.load_button.TabIndex = 2;
             this.load_button.Text = "Load data";
             this.load_button.UseVisualStyleBackColor = false;
-            this.load_button.Click += new System.EventHandler(this.load_button_Click);
+            this.load_button.Click += new System.EventHandler(this.Load_button_Click);
             // 
             // cars_dataGridView
             // 
@@ -109,7 +109,7 @@
             this.cars_dataGridView.Location = new System.Drawing.Point(236, 59);
             this.cars_dataGridView.Name = "cars_dataGridView";
             this.cars_dataGridView.ReadOnly = true;
-            this.cars_dataGridView.Size = new System.Drawing.Size(774, 445);
+            this.cars_dataGridView.Size = new System.Drawing.Size(753, 445);
             this.cars_dataGridView.TabIndex = 3;
             // 
             // makeDataGridViewTextBoxColumn
@@ -288,7 +288,7 @@
             this.add_button.TabIndex = 18;
             this.add_button.Text = "Add";
             this.add_button.UseVisualStyleBackColor = false;
-            this.add_button.Click += new System.EventHandler(this.add_button_Click);
+            this.add_button.Click += new System.EventHandler(this.Add_button_Click);
             // 
             // clear_button
             // 
@@ -301,7 +301,7 @@
             this.clear_button.TabIndex = 19;
             this.clear_button.Text = "Clear";
             this.clear_button.UseVisualStyleBackColor = false;
-            this.clear_button.Click += new System.EventHandler(this.clear_button_Click);
+            this.clear_button.Click += new System.EventHandler(this.Clear_button_Click);
             // 
             // update_button
             // 
@@ -315,7 +315,7 @@
             this.update_button.TabIndex = 20;
             this.update_button.Text = "Update";
             this.update_button.UseVisualStyleBackColor = false;
-            this.update_button.Click += new System.EventHandler(this.update_button_Click);
+            this.update_button.Click += new System.EventHandler(this.Update_button_Click);
             // 
             // carsExplorer
             // 
@@ -329,7 +329,7 @@
             this.carsExplorer.TabIndex = 21;
             this.carsExplorer.Text = "View cars in explorer";
             this.carsExplorer.UseVisualStyleBackColor = false;
-            this.carsExplorer.Click += new System.EventHandler(this.carsExplorer_Click);
+            this.carsExplorer.Click += new System.EventHandler(this.CarsExplorer_Click);
             // 
             // clearDataBase_button
             // 
@@ -343,7 +343,7 @@
             this.clearDataBase_button.TabIndex = 22;
             this.clearDataBase_button.Text = "Clear";
             this.clearDataBase_button.UseVisualStyleBackColor = false;
-            this.clearDataBase_button.Click += new System.EventHandler(this.clearDataBase_button_Click);
+            this.clearDataBase_button.Click += new System.EventHandler(this.ClearDataBase_button_Click);
             // 
             // delete_button
             // 
@@ -358,7 +358,7 @@
             this.delete_button.TabIndex = 29;
             this.delete_button.Text = "Delete selected row";
             this.delete_button.UseVisualStyleBackColor = false;
-            this.delete_button.Click += new System.EventHandler(this.delete_button_Click);
+            this.delete_button.Click += new System.EventHandler(this.Delete_button_Click);
             // 
             // number_textBox
             // 
@@ -372,7 +372,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 27F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.ClientSize = new System.Drawing.Size(1022, 594);
+            this.ClientSize = new System.Drawing.Size(1006, 594);
             this.Controls.Add(this.number_textBox);
             this.Controls.Add(this.delete_button);
             this.Controls.Add(this.clearDataBase_button);

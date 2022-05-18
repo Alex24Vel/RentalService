@@ -48,7 +48,7 @@
             this.cancel_button.TabIndex = 0;
             this.cancel_button.Text = "Cancel";
             this.cancel_button.UseVisualStyleBackColor = false;
-            this.cancel_button.Click += new System.EventHandler(this.cancel_button_Click);
+            this.cancel_button.Click += new System.EventHandler(this.Cancel_button_Click);
             // 
             // cars_button
             // 
@@ -61,7 +61,7 @@
             this.cars_button.TabIndex = 1;
             this.cars_button.Text = "Cars database";
             this.cars_button.UseVisualStyleBackColor = false;
-            this.cars_button.Click += new System.EventHandler(this.cars_button_Click);
+            this.cars_button.Click += new System.EventHandler(this.Cars_button_Click);
             // 
             // trucks_button
             // 
@@ -74,7 +74,7 @@
             this.trucks_button.TabIndex = 2;
             this.trucks_button.Text = "Trucks database";
             this.trucks_button.UseVisualStyleBackColor = false;
-            this.trucks_button.Click += new System.EventHandler(this.trucks_button_Click);
+            this.trucks_button.Click += new System.EventHandler(this.Trucks_button_Click);
             // 
             // motocycles_button
             // 
@@ -87,7 +87,7 @@
             this.motocycles_button.TabIndex = 3;
             this.motocycles_button.Text = "Motocycles database";
             this.motocycles_button.UseVisualStyleBackColor = false;
-            this.motocycles_button.Click += new System.EventHandler(this.motocycles_button_Click);
+            this.motocycles_button.Click += new System.EventHandler(this.Motocycles_button_Click);
             // 
             // bicycles_button
             // 
@@ -100,7 +100,7 @@
             this.bicycles_button.TabIndex = 4;
             this.bicycles_button.Text = "Bicycles database";
             this.bicycles_button.UseVisualStyleBackColor = false;
-            this.bicycles_button.Click += new System.EventHandler(this.bicycles_button_Click);
+            this.bicycles_button.Click += new System.EventHandler(this.Bicycles_button_Click);
             // 
             // VehiclesDataBaseForm
             // 
