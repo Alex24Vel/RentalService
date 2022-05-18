@@ -117,7 +117,7 @@
             this.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.Name = "VehiclesDataBaseForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "VehiclesDataBaseForm";
+            this.Text = "Vehicles databases";
             this.ResumeLayout(false);
 
         }
