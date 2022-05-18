@@ -10,12 +10,12 @@ namespace Forms
             InitializeComponent();
         }
 
-        private void exit_button_Click(object sender, EventArgs e)
+        private void Exit_button_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
-        private void login_button_Click(object sender, EventArgs e)
+        private void Login_button_Click(object sender, EventArgs e)
         {
             if(password_textBox.Text == "admin")
             {
@@ -30,20 +30,20 @@ namespace Forms
                 password_textBox.Focus();
             }
         }
-        private void clear_button_Click(object sender, EventArgs e)
+        private void Clear_button_Click(object sender, EventArgs e)
         {
             username_textBox.Clear();
             password_textBox.Clear();
         }
 
-        private void password_textBox_KeyDown(object sender, KeyEventArgs e)
+        private void Password_textBox_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
-                login_button_Click(sender, e);
+                Login_button_Click(sender, e);
             if (e.KeyCode == Keys.Up)
                 username_textBox.Focus();
         }
-        private void username_textBox_KeyDown(object sender, KeyEventArgs e)
+        private void Username_textBox_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter || e.KeyCode == Keys.Down)
                 password_textBox.Focus();

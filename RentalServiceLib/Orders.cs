@@ -16,9 +16,9 @@ namespace RentalServiceLib
         public string DueDate { get; set; }
 
         public List<Orders> ordersList = new List<Orders>();
-        public string ordersPath = @"T:\Microsoft Visual Studio\Projects\Orders.txt";
+        public static readonly string ordersPath = @"T:\Microsoft Visual Studio\Projects\Orders.txt";
 
-        public void getData(List<Orders> ordersList)
+        public void GetData(List<Orders> ordersList)
         {
             try
             {
@@ -51,8 +51,8 @@ namespace RentalServiceLib
             }
         }
         
-        // for tester (console only)
-        public void showData()
+
+        /*public void showData()
         {
             foreach (var order in ordersList)
             {
@@ -60,7 +60,6 @@ namespace RentalServiceLib
                     $"Vehicle Number: {order.VehicleNumber} Rent date: {order.RentDate} " +
                     $"Due date: {order.DueDate}");
             }
-        }
-
+        }*/
     }
 }

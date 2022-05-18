@@ -15,63 +15,69 @@ namespace Forms
             InitializeComponent();
         }
         internal List<Trucks> truckslist = new List<Trucks>();
-        readonly string TrucksPath = @"T:\Microsoft Visual Studio\Projects\Trucks.txt";
 
 
-        private void close_button_Click(object sender, EventArgs e)
+        private void Close_button_Click(object sender, EventArgs e)
         {
             this.Close();
             VehiclesDataBaseForm vehiclesDataBaseForm = new VehiclesDataBaseForm();
             vehiclesDataBaseForm.Show();
         }
-        private void load_button_Click(object sender, EventArgs e)
+        private void Load_button_Click(object sender, EventArgs e)
         {
             Trucks trucks = new Trucks();
-            trucks.getData(truckslist);
+            trucks.GetData(truckslist);
             trucks_dataGridView.DataSource = truckslist;
         }
-        private void clearDataBase_button_Click(object sender, EventArgs e)
+        private void ClearDataBase_button_Click(object sender, EventArgs e)
         {
             truckslist.Clear();
             trucks_dataGridView.DataSource = truckslist.Distinct();
         }
-        private void update_button_Click(object sender, EventArgs e)
+        private void Update_button_Click(object sender, EventArgs e)
         {
-            clearDataBase_button_Click(sender, e);
+            ClearDataBase_button_Click(sender, e);
             trucks_dataGridView.Update();
-            load_button_Click(sender, e);
+            Load_button_Click(sender, e);
         }
-        private void trucksExplorer_Click(object sender, EventArgs e)
+        private void TrucksExplorer_Click(object sender, EventArgs e)
         {
-            Process.Start(new ProcessStartInfo { FileName = "explorer", Arguments = $"/n,/select,{TrucksPath}" });
+            Process.Start(new ProcessStartInfo { FileName = "explorer", Arguments = $"/n,/select,{Trucks.trucksPath}" });
         }
-        private void delete_button_Click(object sender, EventArgs e)
+        private void Delete_button_Click(object sender, EventArgs e)
         {
-            List<string> tmp = File.ReadAllLines(TrucksPath).ToList();
+            List<string> tmp = File.ReadAllLines(Trucks.trucksPath).ToList();
             tmp.RemoveAt(trucks_dataGridView.CurrentCell.RowIndex);
-            File.WriteAllLines(TrucksPath, tmp.ToArray());
+            File.WriteAllLines(Trucks.trucksPath, tmp.ToArray());
         }
 
 
-        private void add_button_Click(object sender, EventArgs e)
+        private void Add_button_Click(object sender, EventArgs e)
         {
-            Trucks truck = new Trucks
+            if (make_textBox.TextLength <= 1 || model_textBox.TextLength <= 1 || year_textBox.TextLength <= 1 ||
+                pricePerDay_textBox.TextLength <= 1 || year_textBox.TextLength <= 1 || number_textBox.TextLength <= 1
+                || truckType_textBox.TextLength <= 1)
+                MessageBox.Show("Fill in all fields!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            else
             {
-                Make = make_textBox.Text,
-                Model = model_textBox.Text,
-                Year = year_textBox.Text,
-                PricePerDay = pricePerDay_textBox.Text,
-                TruckType = truckType_textBox.Text,
-                Number = number_textBox.Text
-            };
-            truckslist.Add(truck);
+                Trucks truck = new Trucks
+                {
+                    Make = make_textBox.Text,
+                    Model = model_textBox.Text,
+                    Year = year_textBox.Text,
+                    PricePerDay = pricePerDay_textBox.Text,
+                    TruckType = truckType_textBox.Text,
+                    Number = number_textBox.Text
+                };
+                truckslist.Add(truck);
 
-            string fileStr = $"{truck.Make},{truck.Model},{truck.Year}," +
-                $"{truck.PricePerDay},{truck.TruckType},{truck.Number}";
-            using (StreamWriter writer = new StreamWriter(TrucksPath, true))
-                writer.WriteLine(fileStr);
+                string fileStr = $"{truck.Make},{truck.Model},{truck.Year}," +
+                    $"{truck.PricePerDay},{truck.TruckType},{truck.Number}";
+                using (StreamWriter writer = new StreamWriter(Trucks.trucksPath, true))
+                    writer.WriteLine(fileStr);
+            }
         }
-        private void clear_button_Click(object sender, EventArgs e)
+        private void Clear_button_Click(object sender, EventArgs e)
         {
             make_textBox.Clear();
             model_textBox.Clear();

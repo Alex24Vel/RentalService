@@ -96,7 +96,7 @@
             this.vehicles_comboBox.Name = "vehicles_comboBox";
             this.vehicles_comboBox.Size = new System.Drawing.Size(233, 35);
             this.vehicles_comboBox.TabIndex = 3;
-            this.vehicles_comboBox.SelectedIndexChanged += new System.EventHandler(this.vehicles_comboBox_SelectedIndexChanged);
+            this.vehicles_comboBox.SelectedIndexChanged += new System.EventHandler(this.Vehicles_comboBox_SelectedIndexChanged);
             // 
             // number_label
             // 
@@ -128,7 +128,7 @@
             this.add_button.TabIndex = 8;
             this.add_button.Text = "Add";
             this.add_button.UseVisualStyleBackColor = false;
-            this.add_button.Click += new System.EventHandler(this.add_button_Click);
+            this.add_button.Click += new System.EventHandler(this.Add_button_Click);
             // 
             // cancel_button
             // 
@@ -141,7 +141,7 @@
             this.cancel_button.TabIndex = 9;
             this.cancel_button.Text = "Cancel";
             this.cancel_button.UseVisualStyleBackColor = false;
-            this.cancel_button.Click += new System.EventHandler(this.cancel_button_Click);
+            this.cancel_button.Click += new System.EventHandler(this.Cancel_button_Click);
             // 
             // clear_button
             // 
@@ -155,7 +155,7 @@
             this.clear_button.TabIndex = 10;
             this.clear_button.Text = "Clear";
             this.clear_button.UseVisualStyleBackColor = false;
-            this.clear_button.Click += new System.EventHandler(this.clear_button_Click);
+            this.clear_button.Click += new System.EventHandler(this.Clear_button_Click);
             // 
             // orderstext_label
             // 
@@ -178,7 +178,7 @@
             this.load_button.TabIndex = 12;
             this.load_button.Text = "Load data";
             this.load_button.UseVisualStyleBackColor = false;
-            this.load_button.Click += new System.EventHandler(this.load_button_Click);
+            this.load_button.Click += new System.EventHandler(this.Load_button_Click);
             // 
             // dueDate_label
             // 
@@ -259,7 +259,7 @@
             this.clearDataBase_button.TabIndex = 22;
             this.clearDataBase_button.Text = "Clear ";
             this.clearDataBase_button.UseVisualStyleBackColor = false;
-            this.clearDataBase_button.Click += new System.EventHandler(this.clearDataBase_button_Click);
+            this.clearDataBase_button.Click += new System.EventHandler(this.ClearDataBase_button_Click);
             // 
             // update_button
             // 
@@ -273,7 +273,7 @@
             this.update_button.TabIndex = 23;
             this.update_button.Text = "Update";
             this.update_button.UseVisualStyleBackColor = false;
-            this.update_button.Click += new System.EventHandler(this.update_button_Click);
+            this.update_button.Click += new System.EventHandler(this.Update_button_Click);
             // 
             // vehicleNumbers_comboBox
             // 
@@ -299,7 +299,7 @@
             this.ordersExplorer_button.TabIndex = 25;
             this.ordersExplorer_button.Text = "Show orders in file explorer";
             this.ordersExplorer_button.UseVisualStyleBackColor = false;
-            this.ordersExplorer_button.Click += new System.EventHandler(this.ordersExplorer_button_Click);
+            this.ordersExplorer_button.Click += new System.EventHandler(this.OrdersExplorer_button_Click);
             // 
             // showOnly_label
             // 
@@ -322,7 +322,7 @@
             this.showBy_comboBox.Name = "showBy_comboBox";
             this.showBy_comboBox.Size = new System.Drawing.Size(121, 35);
             this.showBy_comboBox.TabIndex = 27;
-            this.showBy_comboBox.SelectedIndexChanged += new System.EventHandler(this.showBy_comboBox_SelectedIndexChanged);
+            this.showBy_comboBox.SelectedIndexChanged += new System.EventHandler(this.ShowBy_comboBox_SelectedIndexChanged);
             // 
             // delete_button
             // 
@@ -337,7 +337,7 @@
             this.delete_button.TabIndex = 28;
             this.delete_button.Text = "Delete selected row";
             this.delete_button.UseVisualStyleBackColor = false;
-            this.delete_button.Click += new System.EventHandler(this.delete_button_Click);
+            this.delete_button.Click += new System.EventHandler(this.Delete_button_Click);
             // 
             // ordersBindingSource
             // 

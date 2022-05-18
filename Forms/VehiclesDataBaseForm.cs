@@ -10,31 +10,31 @@ namespace Forms
             InitializeComponent();
         }
 
-        private void cancel_button_Click(object sender, EventArgs e)
+        private void Cancel_button_Click(object sender, EventArgs e)
         {
             this.Close();
             MainForm mainForm = new MainForm();
             mainForm.Show();
         }
-        private void cars_button_Click(object sender, EventArgs e)
+        private void Cars_button_Click(object sender, EventArgs e)
         {
             this.Hide();
             CarsDataBase carsDataBase = new CarsDataBase();
             carsDataBase.Show();
         }
-        private void trucks_button_Click(object sender, EventArgs e)
+        private void Trucks_button_Click(object sender, EventArgs e)
         {
             this.Hide();
             TrucksDataBase trucksDataBase = new TrucksDataBase();
             trucksDataBase.Show();
         }
-        private void motocycles_button_Click(object sender, EventArgs e)
+        private void Motocycles_button_Click(object sender, EventArgs e)
         {
             this.Hide();
             MotocyclesDataBase motocyclesDataBase = new MotocyclesDataBase();
             motocyclesDataBase.Show();
         }
-        private void bicycles_button_Click(object sender, EventArgs e)
+        private void Bicycles_button_Click(object sender, EventArgs e)
         {
             this.Hide();
             BicyclesDataBase bicyclesDataBase = new BicyclesDataBase();

@@ -75,7 +75,7 @@
             this.close_button.TabIndex = 0;
             this.close_button.Text = "Close";
             this.close_button.UseVisualStyleBackColor = false;
-            this.close_button.Click += new System.EventHandler(this.close_button_Click);
+            this.close_button.Click += new System.EventHandler(this.Close_button_Click);
             // 
             // load_button
             // 
@@ -89,7 +89,7 @@
             this.load_button.TabIndex = 1;
             this.load_button.Text = "Load";
             this.load_button.UseVisualStyleBackColor = false;
-            this.load_button.Click += new System.EventHandler(this.load_button_Click);
+            this.load_button.Click += new System.EventHandler(this.Load_button_Click);
             // 
             // trucks_dataGridView
             // 
@@ -185,7 +185,7 @@
             this.clearDataBase_button.TabIndex = 3;
             this.clearDataBase_button.Text = "Clear";
             this.clearDataBase_button.UseVisualStyleBackColor = false;
-            this.clearDataBase_button.Click += new System.EventHandler(this.clearDataBase_button_Click);
+            this.clearDataBase_button.Click += new System.EventHandler(this.ClearDataBase_button_Click);
             // 
             // update_button
             // 
@@ -199,7 +199,7 @@
             this.update_button.TabIndex = 4;
             this.update_button.Text = "Update";
             this.update_button.UseVisualStyleBackColor = false;
-            this.update_button.Click += new System.EventHandler(this.update_button_Click);
+            this.update_button.Click += new System.EventHandler(this.Update_button_Click);
             // 
             // trucksExplorer
             // 
@@ -213,7 +213,7 @@
             this.trucksExplorer.TabIndex = 5;
             this.trucksExplorer.Text = "View trucks in explorer";
             this.trucksExplorer.UseVisualStyleBackColor = false;
-            this.trucksExplorer.Click += new System.EventHandler(this.trucksExplorer_Click);
+            this.trucksExplorer.Click += new System.EventHandler(this.TrucksExplorer_Click);
             // 
             // trucks_label
             // 
@@ -245,7 +245,7 @@
             this.clear_button.TabIndex = 33;
             this.clear_button.Text = "Clear";
             this.clear_button.UseVisualStyleBackColor = false;
-            this.clear_button.Click += new System.EventHandler(this.clear_button_Click);
+            this.clear_button.Click += new System.EventHandler(this.Clear_button_Click);
             // 
             // add_button
             // 
@@ -259,7 +259,7 @@
             this.add_button.TabIndex = 32;
             this.add_button.Text = "Add";
             this.add_button.UseVisualStyleBackColor = false;
-            this.add_button.Click += new System.EventHandler(this.add_button_Click);
+            this.add_button.Click += new System.EventHandler(this.Add_button_Click);
             // 
             // truckType_textBox
             // 
@@ -363,7 +363,7 @@
             this.delete_button.TabIndex = 34;
             this.delete_button.Text = "Delete selected row";
             this.delete_button.UseVisualStyleBackColor = false;
-            this.delete_button.Click += new System.EventHandler(this.delete_button_Click);
+            this.delete_button.Click += new System.EventHandler(this.Delete_button_Click);
             // 
             // number_textBox
             // 
