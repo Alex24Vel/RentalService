@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.exitMain_button = new System.Windows.Forms.Button();
             this.database_button = new System.Windows.Forms.Button();
             this.orders_button = new System.Windows.Forms.Button();
@@ -82,6 +83,7 @@
             this.Controls.Add(this.database_button);
             this.Controls.Add(this.exitMain_button);
             this.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

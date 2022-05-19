@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
             this.login_groupBox = new System.Windows.Forms.GroupBox();
             this.clear_button = new System.Windows.Forms.Button();
             this.login_button = new System.Windows.Forms.Button();
@@ -152,6 +153,7 @@
             this.Controls.Add(this.exit_button);
             this.Controls.Add(this.login_groupBox);
             this.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
