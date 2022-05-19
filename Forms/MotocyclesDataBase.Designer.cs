@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MotocyclesDataBase));
             this.close_button = new System.Windows.Forms.Button();
             this.load_button = new System.Windows.Forms.Button();
             this.motocycles_dataGridView = new System.Windows.Forms.DataGridView();
@@ -371,6 +372,7 @@
             this.Controls.Add(this.load_button);
             this.Controls.Add(this.close_button);
             this.Font = new System.Drawing.Font("Calibri", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.Name = "MotocyclesDataBase";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
